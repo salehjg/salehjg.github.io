@@ -1,16 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: A brief biography
 ---
 
-My name is Inigo Montoya. I have the following qualities:
-
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+My name is Saleh Jamali Golzar. I have received my BSc and MSc in Electrical Engineering from Electrical and Computer Engineering Department of the University of Tabriz, Iran in 2016 and 2019 respectively. Having a background in embedded systems and circuit design, my current research mostly include FPGA-based acceleration, GPGPU, machine vision, and machine learning.
