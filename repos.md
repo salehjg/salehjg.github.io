@@ -4,4 +4,5 @@ title: Repositories
 subtitle: Some of my public Git repositories
 ---
 
-blah blahblah blahblah blah
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=salehjg)](https://github.com/anuraghazra/github-readme-stats)
+
