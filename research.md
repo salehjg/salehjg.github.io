@@ -17,7 +17,7 @@ subtitle: The projects that I was involved in
 
 **Digimposer**
 - Extended depth-of-field in microscopy imaging
-- Camera support for products of Basler
+- Camera support for the products of Basler
 
 ## Hobby/Commercial Projects
 **Hardware for 3D scanner using photogrammetry**
