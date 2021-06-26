@@ -19,7 +19,7 @@ subtitle: The projects that I was involved in
 - Extended depth-of-field in microscopy imaging
 - Camera support for products of Basler
 
-## Hubby/Commercial Projects
+## Hobby/Commercial Projects
 **Hardware for 3D scanner using photogrammetry**
 - Hardware design for rotating the object infront of a fixed camera
 
