@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Mature Libraries for Symbolic Computation"
-date:   2021-03-10 12:32:45 +0330
+date:   2022-03-10 12:32:45 +0330
 categories:
 ---
 
