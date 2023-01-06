@@ -4,7 +4,7 @@ title:  "Mature Libraries for Symbolic Computation"
 date:   2022-03-10 12:32:45 +0330
 categories:
 ---
-
+# Mature Libraries for Symbolic Computation
 Lately, shortcomming of `SymPy` for Python has forced me to look for its alternatives elsewhere.
 Based on [the comments that I got from the Reddit community](https://www.reddit.com/r/cpp/comments/t8zjww/a_mature_library_for_symbolic_computation/), it seems like the libraries listed below could be some good alternatives for various languages.
 
