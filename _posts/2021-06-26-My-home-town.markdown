@@ -2,7 +2,7 @@
 layout: post
 title:  "My hometown Tabriz"
 date:   2021-06-26 12:32:45 +0330
-categories:]
+categories:
 ---
 
 Located in northwestern Iran, Tabriz with a population of around 2 million is one of the biggest cities of the country. (the photos are from Wikipedia)
