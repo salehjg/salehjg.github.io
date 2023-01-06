@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Computational Graphs for NNs."
+date:   2022-11-09 12:32:45 +0330
+categories:
+---
+<img align="center" width="320" src="Upload the image!">
+
+This post is not ready yet!
