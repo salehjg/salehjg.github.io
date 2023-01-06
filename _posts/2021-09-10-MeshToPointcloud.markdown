@@ -4,7 +4,9 @@ title:  "A Tool To Convert Mesh Data To Pointcloud"
 date:   2021-06-26 12:32:45 +0330
 categories: [pointcloud,sampling,dataset]
 ---
-![Cover Image](https://raw.githubusercontent.com/salehjg/MeshToPointcloudFPS/master/data/image.png)
+
+<img src="https://raw.githubusercontent.com/salehjg/MeshToPointcloudFPS/master/data/image.png" alt="Untitled" />
+
 [MeshToPointcloudFPS](https://github.com/salehjg/MeshToPointcloudFPS) is an opensource utility based on [PCL-lib](https://github.com/PointCloudLibrary/pcl), [Vcglib](https://github.com/cnr-isti-vclab/vcglib), and [Meshlab](https://github.com/cnr-isti-vclab/meshlab) to convert `OBJ` files into `PCL` or `HDF5` files. It supports downsampling of the resulted pointcloud using Furthest Point Sampling (FPS) algorithm. The utility could be used to prepare datasets offered in Mesh format (such as Shapenet Core).
 
 ```
