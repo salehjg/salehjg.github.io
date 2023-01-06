@@ -4,7 +4,7 @@ title:  "Preparation of Shapenet Core V2 (Mesh to PCL) "
 date:   2021-09-10 12:32:45 +0330
 categories:
 ---
-
+# Preparation of Shapenet Core V2 (Mesh to PCL)
 <img align="right" width="150" src="https://raw.githubusercontent.com/salehjg/MeshToPointcloudFPS/master/data/image.png">
 
 This post is going to be a short one! Just wanted to share [my python script](https://github.com/salehjg/Shapenet2_Preparation) to prepare and convert [Shapenet Core V2](https://shapenet.org/) to pointclouds. 
