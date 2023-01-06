@@ -5,12 +5,9 @@ date:   2021-06-26 12:32:45 +0330
 categories:
 ---
 
-### You're Breathtaking
+# My Hometown, Tabriz!
 
 <img align="right" width="150" src="https://upload.wikimedia.org/wikipedia/commons/a/a6/El_G%C3%B6l%C3%BC_%28%C5%9Eah_G%C3%B6l%C3%BC%29_-_panoramio.jpg">
-
-<img align="right" width="150" src="">
-
 
 Located in northwestern Iran, Tabriz with a population of around 2 million is one of the biggest cities of the country. (the photos are from Wikipedia)
 
