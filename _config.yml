@@ -1,7 +1,7 @@
 # Example Site settings
 
 url: 'https://salehjg.github.io/' # your main domain
-baseurl: 'salehjg.github.io/' # if you're using custom domain keep this blank example: baseurl: ''
+baseurl: '' # if you're using custom domain keep this blank example: baseurl: ''
 
 
 #google_analytics: UA-NNNNNNNN-N
