@@ -6,13 +6,13 @@ permalink: /publication/
 
 # Publication (Accepted)  
 
-> [**DGCNN on FPGA: Acceleration of The Point Cloud Classifier Using FPGAs**](https://link.springer.com/article/10.1007/s00034-022-02179-0)  
-> _Springer Journal of Circuits, Systems, and Signal Processing (IF=1.9)_   
+> [**DGCNN on FPGA: Acceleration of The Point Cloud Classifier Using FPGAs**](https://link.springer.com/article/10.1007/s00034-022-02179-0)
+> _Springer Journal of Circuits, Systems, and Signal Processing (IF=1.9)_
 > _My Masters Project_ [(Github Repo)](https://github.com/salehjg/DeepPoint-V2-FPGA)
-> - Saleh Jamali Golzar, MSc
-> - Ghader Karimian, Associate Professor, University of Tabriz, Tabriz, Iran (Supervisor)
-> - Maryam Shoaran, Associate Professor, University of Tabriz, Tabriz, Iran (Adviser)
-> - Mohammad Fattahi Sani, MSc
+>> Saleh Jamali Golzar, MSc, University of Tabriz
+>> Ghader Karimian, Assoc. Prof., University of Tabriz (Supervisor)
+>> Maryam Shoaran, Assoc. Prof., University of Tabriz (Adviser)
+>> Mohammad Fattahi Sani, MSc, Bristol Robotics Laboratory
 
 # Publication (Under Review)
 * Nothing.
