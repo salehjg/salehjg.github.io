@@ -4,6 +4,12 @@ title:  "Computational Graphs for NNs."
 date:   2022-11-09 12:32:45 +0330
 categories:
 ---
-<img align="center" width="320" src="Upload the image!">
 
+# Computational Graphs for NNs.
 This post is not ready yet!
+
+<img align="center" width="480" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/fused_2x_conv2d_valid_img1.PNG">
+
+
+<img align="center" width="480" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/fused_2x_conv2d_valid_img2.PNG">
+
