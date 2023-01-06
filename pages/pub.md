@@ -15,9 +15,9 @@ permalink: /publication/
 >- Mohammad Fattahi Sani, MSc, Bristol Robotics Laboratory
 
 # Publication (Under Review)
-* Nothing.
+> Nothing.
 
 # Work in Progress
-* DNN-Fuser: A generic framework to design optimized fused dataflow accelerators for CPUs/GPUs/FPGAs  
-  * _Rethinking how ML/DL models are structured and executed_  
-  * _In progress since Feb. 2022_  
+> **DNN-Fuser: A generic framework to design optimized fused dataflow accelerators for CPUs/GPUs/FPGAs**
+> * _Rethinking how ML/DL models are structured and executed_
+> * _In progress since Feb. 2022_
