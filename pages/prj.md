@@ -7,31 +7,31 @@ permalink: /projects/
 # Projects (Hobby / Commercial)
 
 - **DigiLeaf**
-  - A leaf shape analysis software, written in C#.net
-  - Capable of batch image analysis
+    - A leaf shape analysis software, written in C#.net
+    - Capable of batch image analysis
 
 - **Digimposer**
-  - Extended depth-of-field for microscopy imaging
-  - Camera support for the products of Basler
+    - Extended depth-of-field for microscopy imaging
+    - Camera support for the products of Basler
 
 - **Hardware for 3D scanner using photogrammetry**
-  - Hardware design for rotating the object in front of a fixed camera
+    - Hardware design for rotating the object in front of a fixed camera
 
 - **Wireless ESP32 based 4-channel data logger**
-  - Mixed-signal PCB design
-  - Based on `ESP-IDF`
-  - The desktop side application is written in C#.net
+    - Mixed-signal PCB design
+    - Based on `ESP-IDF`
+    - The desktop side application is written in C#.net
 
 - **IoT/Wireless Treadmill Controller**
-  - `ESP8266` and `STM8` based design
-  - IGBT based power circuit
-  - Android application
+    - `ESP8266` and `STM8` based design
+    - IGBT based power circuit
+    - Android application
 
 - **FPGA Based USB2.0 Digital Camera**
-  - Based on Xilinx `Spartan-3` and Cypress `USB-FX2LP` devices
-  - Omnivision `OV7670` CMOS image sensor
-  - PCB
-  - Verilog design entry
+    - Based on Xilinx `Spartan-3` and Cypress `USB-FX2LP` devices
+    - Omnivision `OV7670` CMOS image sensor
+    - PCB
+    - Verilog design entry
  
 # Repositories
 
