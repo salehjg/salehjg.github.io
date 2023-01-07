@@ -8,7 +8,9 @@ permalink: /findme/
 > `SalehJamaliGolzar@gmail.com`
 
 ## Accounts
+>* [LinkedIn](https://www.linkedin.com/in/saleh-jamali-929b8b51/)
 >* [Twitter](https://twitter.com/salehjg1994)
+>* [Springer](https://link.springer.com/search?dc.creator=Saleh%20Jamali%20Golzar)
 >* [Github](https://github.com/salehjg)
 >* [Github/Gists](https://gist.github.com/salehjg)
 >* [Gitlab](https://gitlab.com/salehjg)
