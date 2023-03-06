@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to build OpenCV from source for Android"
-date:   2023-03-7 12:32:45 +0330
+date:   2023-03-6 12:32:45 +0330
 categories:
 ---
 # How to build OpenCV from source for Android
