@@ -130,6 +130,7 @@ sourceSets {
 19. Open `MainActivity.java` and replace the content with:
 <details> 
   <summary>Click to show the code</summary>
+            
   ```
   public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
       private CameraBridgeViewBase mOpenCvCameraView;
@@ -214,6 +215,7 @@ sourceSets {
       }
   }
   ```
+                                                        
 </details>                                           
 20. Build the project.
 21. Connect your phone and run the app on the device.
