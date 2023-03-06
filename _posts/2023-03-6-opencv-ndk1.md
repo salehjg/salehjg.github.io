@@ -114,7 +114,7 @@ sourceSets {
           opencv:camera_id="any" />
 
   </LinearLayout>
-~~~
+~~~  
 18. Open `AndroidManifest.xml` and add these outside the `application` entry:
 ~~~ xml
     <uses-permission android:name="android.permission.CAMERA" />
