@@ -216,7 +216,8 @@ sourceSets {
   }
   ```
                                                         
-</details>                                           
+</details>
+
 20. Build the project.
 21. Connect your phone and run the app on the device.
 22. On the device (mine is API26) accept the permissions.
