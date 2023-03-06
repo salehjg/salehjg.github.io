@@ -117,7 +117,6 @@ sourceSets {
   </LinearLayout>
 ```
 
-
 18. Open `AndroidManifest.xml` and add these outside the `application` entry:
 ```
     <uses-permission android:name="android.permission.CAMERA" />
@@ -126,8 +125,8 @@ sourceSets {
     <uses-feature android:name="android.hardware.camera.front" />
     <uses-feature android:name="android.hardware.camera.front.autofocus" />
 ```
+
 19. Open `MainActivity.java` and replace the content with:
-         
 ```
   public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
       private CameraBridgeViewBase mOpenCvCameraView;
@@ -212,7 +211,7 @@ sourceSets {
       }
   }
 ```
-                                                        
+
 20. Build the project.
 21. Connect your phone and run the app on the device.
 22. On the device (mine is API26) accept the permissions.
