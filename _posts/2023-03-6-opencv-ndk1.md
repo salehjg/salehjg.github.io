@@ -104,7 +104,7 @@ sourceSets {
       xmlns:opencv="http://schemas.android.com/apk/res-auto"
       android:layout_width="match_parent"
       android:layout_height="match_parent" >
-
+              
       <org.opencv.android.JavaCameraView
           android:layout_width="fill_parent"
           android:layout_height="fill_parent"
@@ -112,9 +112,9 @@ sourceSets {
           android:id="@+id/HelloOpenCvView"
           opencv:show_fps="true"
           opencv:camera_id="any" />
-
   </LinearLayout>
-~~~  
+~~~
+
 18. Open `AndroidManifest.xml` and add these outside the `application` entry:
 ~~~ xml
     <uses-permission android:name="android.permission.CAMERA" />
