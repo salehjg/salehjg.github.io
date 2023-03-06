@@ -98,7 +98,6 @@ sourceSets {
 15. Find and open `settings.gradle` in the `Project Side Bar` on `Project` mode and append `include ':opencv'` to it and `Sync` the gradle script.
 16. Find and open app's `build.gradle` and add `implementation project(path: ':opencv')` to the `dependencies` entry and `Sync` the gradle script.
 17. Open `activity_main.xml` and copy this:
-
 ```
   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:tools="http://schemas.android.com/tools"
@@ -116,7 +115,6 @@ sourceSets {
 
   </LinearLayout>
 ```
-
 18. Open `AndroidManifest.xml` and add these outside the `application` entry:
 ```
     <uses-permission android:name="android.permission.CAMERA" />
