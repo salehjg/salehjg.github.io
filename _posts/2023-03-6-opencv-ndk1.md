@@ -9,11 +9,6 @@ categories:
 Recently, I had to use OpenCV in an Android Studio project and unfortenately the off-the-shelf, ready to use binaries on the internet were not quite compatible with my setup.
 So it took me a couple of days to workout the issues and I thought it might be helpful to document the process for later use by me or someone else.
 
-<details> 
-  <summary>Q1: What is the best Language in the World? </summary>
-   A1: JavaScript 
-</details>
-
 # Pre Requisities
 1. Use a Linux OS. It is assumed that `Arch Linux` is used.
 2. Install the latest version of `Android Studio`.
@@ -103,23 +98,27 @@ sourceSets {
 15. Find and open `settings.gradle` in the `Project Side Bar` on `Project` mode and append `include ':opencv'` to it and `Sync` the gradle script.
 16. Find and open app's `build.gradle` and add `implementation project(path: ':opencv')` to the `dependencies` entry and `Sync` the gradle script.
 17. Open `activity_main.xml` and copy this:
-```
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:opencv="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<details> 
+  <summary>Click to show the code</summary>
+  ```
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      xmlns:opencv="http://schemas.android.com/apk/res-auto"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" >
 
-    <org.opencv.android.JavaCameraView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:visibility="gone"
-        android:id="@+id/HelloOpenCvView"
-        opencv:show_fps="true"
-        opencv:camera_id="any" />
+      <org.opencv.android.JavaCameraView
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:visibility="gone"
+          android:id="@+id/HelloOpenCvView"
+          opencv:show_fps="true"
+          opencv:camera_id="any" />
 
-</LinearLayout>
-```
+  </LinearLayout>
+  ```
+</details>
+
 18. Open `AndroidManifest.xml` and add these outside the `application` entry:
 ```
     <uses-permission android:name="android.permission.CAMERA" />
@@ -129,91 +128,93 @@ sourceSets {
     <uses-feature android:name="android.hardware.camera.front.autofocus" />
 ```
 19. Open `MainActivity.java` and replace the content with:
-```
+<details> 
+  <summary>Click to show the code</summary>
+  ```
+  public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
+      private CameraBridgeViewBase mOpenCvCameraView;
 
-public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
-    private CameraBridgeViewBase mOpenCvCameraView;
+      @Override
+      protected void onCreate(Bundle savedInstanceState) {
+          super.onCreate(savedInstanceState);
+          setContentView(R.layout.activity_main);
+          System.loadLibrary("opencv_java3");
+          Mat a = new Mat(100,200, CvType.CV_8UC1);
+          Mat b = new Mat(100,200, CvType.CV_8UC1);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        System.loadLibrary("opencv_java3");
-        Mat a = new Mat(100,200, CvType.CV_8UC1);
-        Mat b = new Mat(100,200, CvType.CV_8UC1);
+          getPermissions();
 
-        getPermissions();
+          mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.HelloOpenCvView);
+          mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
+          mOpenCvCameraView.setCvCameraViewListener(this);
 
-        mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.HelloOpenCvView);
-        mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
-        mOpenCvCameraView.setCvCameraViewListener(this);
+      }
 
-    }
+      private void getPermissions() {
+          String[] requiredPermission = {
+                  android.Manifest.permission.CAMERA,
+          };
+          ActivityCompat.requestPermissions(MainActivity.this, requiredPermission, 100);
+      }
 
-    private void getPermissions() {
-        String[] requiredPermission = {
-                android.Manifest.permission.CAMERA,
-        };
-        ActivityCompat.requestPermissions(MainActivity.this, requiredPermission, 100);
-    }
+      @Override
+      public void onRequestPermissionsResult (int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
+          super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-    @Override
-    public void onRequestPermissionsResult (int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+          if (requestCode == 100) {
 
-        if (requestCode == 100) {
+              boolean allPermission = true;
+              for (int i = 0; i < grantResults.length-2; i++) {
+                  if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                      allPermission = false;
+                  }
+              }
+              if (allPermission) {
+                  Toast.makeText(this, "Perms granted.", Toast.LENGTH_SHORT).show();
+                  mOpenCvCameraView.enableView();
+              } else {
+                  Toast.makeText(this, "Failed to get the perms.", Toast.LENGTH_SHORT).show();
+              }
+          }
+      }
 
-            boolean allPermission = true;
-            for (int i = 0; i < grantResults.length-2; i++) {
-                if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
-                    allPermission = false;
-                }
-            }
-            if (allPermission) {
-                Toast.makeText(this, "Perms granted.", Toast.LENGTH_SHORT).show();
-                mOpenCvCameraView.enableView();
-            } else {
-                Toast.makeText(this, "Failed to get the perms.", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
+      @Override
+      public void onCameraViewStarted(int width, int height) {
 
-    @Override
-    public void onCameraViewStarted(int width, int height) {
+      }
 
-    }
+      @Override
+      public void onCameraViewStopped() {
 
-    @Override
-    public void onCameraViewStopped() {
+      }
 
-    }
+      @Override
+      public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
+          Mat src = inputFrame.rgba();
 
-    @Override
-    public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
-        Mat src = inputFrame.rgba();
+          Mat gray = new Mat(src.rows(), src.cols(), src.type());
+          Mat edges = new Mat(src.rows(), src.cols(), src.type());
 
-        Mat gray = new Mat(src.rows(), src.cols(), src.type());
-        Mat edges = new Mat(src.rows(), src.cols(), src.type());
+          org.opencv.imgproc.Imgproc.cvtColor(src, gray, org.opencv.imgproc.Imgproc.COLOR_RGB2GRAY);
+          org.opencv.imgproc.Imgproc.Canny(gray, edges, 100, 100*3);
+          return edges;
+      }
 
-        org.opencv.imgproc.Imgproc.cvtColor(src, gray, org.opencv.imgproc.Imgproc.COLOR_RGB2GRAY);
-        org.opencv.imgproc.Imgproc.Canny(gray, edges, 100, 100*3);
-        return edges;
-    }
+      @Override
+      public void onPause() {
+          super.onPause();
+          if (mOpenCvCameraView != null)
+              mOpenCvCameraView.disableView();
+      }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        if (mOpenCvCameraView != null)
-            mOpenCvCameraView.disableView();
-    }
-
-    public void onDestroy() {
-        super.onDestroy();
-        if (mOpenCvCameraView != null)
-            mOpenCvCameraView.disableView();
-    }
-}
-```
+      public void onDestroy() {
+          super.onDestroy();
+          if (mOpenCvCameraView != null)
+              mOpenCvCameraView.disableView();
+      }
+  }
+  ```
+</details>                                           
 20. Build the project.
 21. Connect your phone and run the app on the device.
 22. On the device (mine is API26) accept the permissions.
