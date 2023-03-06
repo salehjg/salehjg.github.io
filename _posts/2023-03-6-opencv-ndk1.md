@@ -98,7 +98,7 @@ sourceSets {
 15. Find and open `settings.gradle` in the `Project Side Bar` on `Project` mode and append `include ':opencv'` to it and `Sync` the gradle script.
 16. Find and open app's `build.gradle` and add `implementation project(path: ':opencv')` to the `dependencies` entry and `Sync` the gradle script.
 17. Open `activity_main.xml` and copy this:
-```
+~~~ xml
   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:tools="http://schemas.android.com/tools"
       xmlns:opencv="http://schemas.android.com/apk/res-auto"
@@ -114,15 +114,15 @@ sourceSets {
           opencv:camera_id="any" />
 
   </LinearLayout>
-```
+~~~
 18. Open `AndroidManifest.xml` and add these outside the `application` entry:
-```
+~~~ xml
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera.front" />
     <uses-feature android:name="android.hardware.camera.front.autofocus" />
-```
+~~~
 
 19. Open `MainActivity.java` and replace the content with:
 ~~~ java
