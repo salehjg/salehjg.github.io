@@ -59,7 +59,7 @@ Now that we are finished with the old `android` executable, we have to restore t
 
 ## Resoring the original `Sdk/tools`
 ```
-$ rm -rf ~/Android/Sdk/tools ~/Android/Sdk/
+$ rm -rf ~/Android/Sdk/tools
 $ mv ~/Android/Sdk/tools.ORIG ~/Android/Sdk/tools
 ``` 
 
