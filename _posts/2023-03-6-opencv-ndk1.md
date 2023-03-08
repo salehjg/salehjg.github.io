@@ -6,8 +6,8 @@ categories:
 ---
 # How to build OpenCV from source for Android
 <img align="right" width="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/OpenCV_Logo_with_text_svg_version.svg/800px-OpenCV_Logo_with_text_svg_version.svg.png">
-Recently, I had to use OpenCV in an Android Studio project and unfortenately the off-the-shelf, ready to use binaries on the internet were not quite compatible with my setup.
-So it took me a couple of days to workout the issues and I thought it might be helpful to document the process for later use by me or someone else.
+Recently, I had to use OpenCV in an Android Studio project and unfortunately, the off-the-shelf, ready-to-use binaries on the internet were not entirely compatible with my setup.
+So it took me a couple of days to work out the issues and I thought it might be helpful to document the process for later use by me or someone else.
 
 # Pre Requisities
 1. Use a Linux OS. It is assumed that `Arch Linux` is used.
