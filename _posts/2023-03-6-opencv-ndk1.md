@@ -66,10 +66,10 @@ $ mv ~/Android/Sdk/tools.ORIG ~/Android/Sdk/tools
 # Setting up the Android Studio project
 1. Assuming that the OpenCV shared library for Android is already built, follow the steps below.
 2. Create a new project, Java, MinSDK API26.
-3. In `Project Side Bar`, right click on `App` and select `New -> Folder -> JNI Folder`.
+3. In `Project Side Bar`, right-click on `App` and select `New -> Folder -> JNI Folder`.
 4. Check the `Change Folder Location` check box and rename the last part of the path from `src/main/jni/` to `src/main/jniLibs/` .
 5. Go to your `OpenCV/01_ndk_outputs/sdk/native/libs` source directory and select all the folders and copy them into `jniLibs` of your Android Studio project.
-6. It is assumed that your phone is a `arm64-v8a`.
+6. It is assumed that your phone is an `arm64-v8a`.
 7. Open your app's `build.gradle` and add this to `defaultConfig` entry:
             ```
             externalNativeBuild{
