@@ -20,7 +20,7 @@ If you need the `cv1` interface of OpenCV, you should use version<4. Versions>=4
 We are going to use OpenCV 3.4.16 .
 
 # Android SDK Tools
-The `android` executable of Android SDK located at `sdk/tools/android` which is used by OpenCV's CMake scripts to setup the java module project is depricated by Google. Unfortunately, OpenCV, even the latest versions of it, still use this depricated executable. The workaround is to download an older version of this file from Google and use it instead. 
+The `android` executable of Android SDK located at `sdk/tools/android` which is used by OpenCV's CMake scripts to set up the java module project is deprecated by Google. Unfortunately, OpenCV, even the latest versions of it, still use this deprecated executable. The workaround is to download an older version of this file from Google and use it instead. 
 (as described [here](https://forum.unity.com/threads/solved-android-command-deprecated-error-unable-to-list-target-platforms.458814/))
 
 ## Downgrading `Sdk/tools`
