@@ -13,7 +13,8 @@ So it took me a couple of days to work out the issues and I thought it might be 
 1. Use a Linux OS. It is assumed that `Arch Linux` is used.
 2. Install the latest version of `Android Studio`.
 3. Use `SDK Manger` of `Android Studio` to install your `SDK 25`, `NDK 21.4.7075529`, and `BuildTools 25.0.3` of your choice.
-4. Install the packages that we are going to need on your linux: `sudo pacman -S cmake git aria2 ant unzip`
+4. Install the packages that we are going to need on your linux: sudo pacman -S cmake git aria2 ant unzip ant
+5. Make sure you have a suitable python2, python3, and jdk
 
 # OpenCV Versions
 If you need the `cv1` interface of OpenCV, you should use version<4. Versions>=4 only have the `cv2` interface.
