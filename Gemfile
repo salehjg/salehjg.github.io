@@ -5,4 +5,3 @@ gemspec
 
 
 gem 'jekyll-seo-tag'
-gem 'jekyll-spaceship', group: :jekyll_plugins
