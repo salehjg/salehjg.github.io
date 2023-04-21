@@ -7,6 +7,7 @@ permalink: /projects/
 # Projects (Hobby / Commercial)
 
 <img align="right" width="150" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/fpga.gif">
+
 ## FPGA Based USB2.0 Digital Camera
 - Based on Xilinx `Spartan-3` and Cypress `USB-FX2LP` devices
 - Omnivision `OV7670` CMOS image sensor
@@ -14,15 +15,18 @@ permalink: /projects/
 - Verilog design entry
 
 <img align="right" width="150" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/leaf.gif">
+
 ## DigiLeaf
 - A leaf shape analysis software, written in C#.net
 - Capable of batch image analysis
 
 <img align="right" width="150" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/scan.gif">
+
 ## Hardware for 3D scanner using photogrammetry
 - Hardware design for rotating the object in front of a fixed camera
 
 <img align="right" width="150" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/logger.gif">
+
 ## Wireless ESP32 based 4-channel data logger
 - Mixed-signal PCB design
 - Based on `ESP-IDF`
