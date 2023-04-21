@@ -6,17 +6,23 @@ permalink: /projects/
 
 # Projects (Hobby / Commercial)
 
+<img align="right" width="150" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/fpga.gif">
+## FPGA Based USB2.0 Digital Camera
+- Based on Xilinx `Spartan-3` and Cypress `USB-FX2LP` devices
+- Omnivision `OV7670` CMOS image sensor
+- PCB
+- Verilog design entry
+
+<img align="right" width="150" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/leaf.gif">
 ## DigiLeaf
 - A leaf shape analysis software, written in C#.net
 - Capable of batch image analysis
 
-## Digimposer
-- Extended depth-of-field for microscopy imaging
-- Camera support for the products of Basler
-
+<img align="right" width="150" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/scan.gif">
 ## Hardware for 3D scanner using photogrammetry
 - Hardware design for rotating the object in front of a fixed camera
 
+<img align="right" width="150" src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/logger.gif">
 ## Wireless ESP32 based 4-channel data logger
 - Mixed-signal PCB design
 - Based on `ESP-IDF`
@@ -27,11 +33,10 @@ permalink: /projects/
 - IGBT based power circuit
 - Android application
 
-## FPGA Based USB2.0 Digital Camera
-- Based on Xilinx `Spartan-3` and Cypress `USB-FX2LP` devices
-- Omnivision `OV7670` CMOS image sensor
-- PCB
-- Verilog design entry
+## Digimposer
+- Extended depth-of-field for microscopy imaging
+- Camera support for the products of Basler
+
   
   
 # Repositories
@@ -60,5 +65,8 @@ permalink: /projects/
 [![salehjg/latex_3d_objects_with_sketch - GitHub](https://gh-card.dev/repos/salehjg/latex_3d_objects_with_sketch.svg)](https://github.com/salehjg/latex_3d_objects_with_sketch)
 
 [![salehjg/Batch-TopK - GitHub](https://gh-card.dev/repos/salehjg/Batch-TopK.svg)](https://github.com/salehjg/Batch-TopK)
+
+[![salehjg/Cereal-Cpp-Examples - GitHub](https://gh-card.dev/repos/salehjg/Cereal-Cpp-Examples.svg)](https://github.com/salehjg/Cereal-Cpp-Examples)
+
 
 
