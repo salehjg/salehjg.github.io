@@ -63,7 +63,8 @@ Note that one can use `doxygen -g <FILENAME>` to generate a basic configuration 
 - `DOT_PATH`: Set to `/usr/bin/dot`. This is where the `dot` executable is usually stored in an Ubuntu image (in Github Actions).
 - `PLANTUML_JAR_PATH`: Set to `/usr/share/plantuml/plantuml.jar`. This is where the `platuml.jar` file is stored in an Ubuntu image. For ArchLinux it is `/usr/share/java/plantuml/plantuml.jar`.
 
-**The nice-to-have tags are as follows:"
+
+**The nice-to-have tags are as follows:**
 - `JAVADOC_AUTOBRIEF`
 - `MARKDOWN_SUPPORT`: Should be set to `YES`.
 - `AUTOLINK_SUPPORT`
@@ -84,7 +85,7 @@ Note that one can use `doxygen -g <FILENAME>` to generate a basic configuration 
 ## Create `main.yml`:
 Create the hidden `.github` folder. Inside, create another folder named `workflows`. (`mkdir -p .github/workflows`)
 Then create a file named `main.yml` inside `workflows` directory with the content:
-```
+~~~
 # This is a basic workflow to help you get started with Actions
 
 name: Doxygen Action
@@ -135,7 +136,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ${{ github.workspace }}/build/doc
-```
+~~~
 
 1. Set your master branch's name in `branches: [<HERE>]`. Mine is called `main`.
 2. Set the image name to Ubuntu with `runs-on: ubuntu-latest`. We have hardcoded the paths to `plantuml.jar` and `dot` in the Doxygen config file for an Ubuntu image, so we need to use Ubuntu here.
