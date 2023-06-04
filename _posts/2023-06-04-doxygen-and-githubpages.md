@@ -81,6 +81,83 @@ Note that one can use `doxygen -g <FILENAME>` to generate a basic configuration 
 - `USE_MATHJAX`: Set to `YES` to have the math formulas written in LaTeX math format rendered in the output HTML files.
 - `TEMPLATE_RELATIONS`: Set to `YES`.
 
- 
-  
+## Create `main.yml`:
+Create the hidden `.github` folder. Inside, create another folder named `workflows`. (`mkdir -p .github/workflows`)
+Then create a file named `main.yml` inside `workflows` directory with the content:
+```
+# This is a basic workflow to help you get started with Actions
 
+name: Doxygen Action
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v3.5.2
+
+    - name: Install plantuml
+      run: sudo apt-get update && sudo apt-get install -y plantuml
+
+    - name: actions-setup-cmake
+      uses: jwlawson/actions-setup-cmake@v1.14.0
+      with:
+        cmake-version: 'latest'
+    
+    - name: configure our build dir
+      run: mkdir -p build/doc
+
+    - name: Doxygen Action
+      uses: mattnotmitt/doxygen-action@v1.9.5
+      with:
+        # Path to Doxyfile
+        doxyfile-path: "./DoxyfileGithubAction"
+        # Working directory
+        working-directory: "."
+    
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3.9.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ${{ github.workspace }}/build/doc
+```
+
+1. Set your master branch's name in `branches: [<HERE>]`. Mine is called `main`.
+2. Set the image name to Ubuntu with `runs-on: ubuntu-latest`. We have hardcoded the paths to `plantuml.jar` and `dot` in the Doxygen config file for an Ubuntu image, so we need to use Ubuntu here.
+3. Use `actions/checkout` so you can access your repository in `$GITHUB_WORKSPACE` or `${{ github.workspace }}`.
+4. Install `plantuml` with `sudo apt-get update && sudo apt-get install -y plantuml`.
+5. (you might have to install `mathjax` as well.
+6. Install `cmake` with `jwlawson/actions-setup-cmake` in case you do not want to hardcode the files paths into the Doxygen config file. (NOT NEEDED HERE)
+7. Setup our output directories with `mkdir -p build/doc`.
+8. Use `mattnotmitt/doxygen-action` to handle Doxygen generation. Set `doxyfile-path` to `./DoxyfileGithubAction`. Do not forget that our relative path is based on the `working-directory` which is set to `.`, meaning the root directory of your repository copy on the server.
+9. Use `peaceiris/actions-gh-pages` to automatically publish the content of `<ROOT REPO DIR>/build/doc` on the repositorie's Github Page. Set `publish_dir` to `${{ github.workspace }}/build/doc`. It will handle creating the `gh-pages` branch and pushing the files there.
+10. On your local machine, commit the changes and push it to Github.
+11. Wait for the Action to finish.
+12. Make sure there are no errors.
+13. Go to your Github repository, click on the `Settings` menu, click on `Pages` from the left menu bar, select `Deploy from a branch` for `Sources`. Finally, select `gh-pages` and `Root /` for the branch combo-boxes.
+14. You might need to allow Actions to write into your repository. Github Repo -> Settings -> Actions -> General: Select `Read and Write Permissions` radio-button and check the `Allow Github Actions to create and approve pull requests` checkbox.
+
+## Have a cup of coffee and enjoy the results
+Now, you can access the deployed Github Page of the repository at `https://<USERNAME>.github.io/<REPO NAME>`.
+
+# References
+[actions-gh-pages](https://github.com/peaceiris/actions-gh-pages)
+[doxygen-action](https://github.com/mattnotmitt/doxygen-action)
+[Github-Documentation-With-Doxygen](https://github.com/satu0king/Github-Documentation-With-Doxygen)
+[learn-github-actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
+[CGenCpp](https://github.com/salehjg/CGenCpp)
