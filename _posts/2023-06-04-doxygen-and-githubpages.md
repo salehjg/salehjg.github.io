@@ -45,6 +45,7 @@ Store both files in the root directory of your repository.
 Note that one can use `doxygen -g <FILENAME>` to generate a basic configuration file, but then the content should be modified further to meet the objectives.
 
 
+
 **The important tags are as follows:**
 - `INPUT`: The space-sperated list of the files and folders that should be processed by Doxygen. Put `README.md` here as well, if you want Doxygen to use it as the main page.
 - `RECURSIVE`: Should be set to `ON`. This way the nested directories are also going to be scanned for sources.
@@ -59,6 +60,7 @@ Note that one can use `doxygen -g <FILENAME>` to generate a basic configuration 
 - `DOT_IMAGE_FORMAT`: Set to `png:cairo:cairo`.
 - `DOT_PATH`: Set to `/usr/bin/dot`. This is where the `dot` executable is usually stored in an Ubuntu image (in Github Actions).
 - `PLANTUML_JAR_PATH`: Set to `/usr/share/plantuml/plantuml.jar`. This is where the `platuml.jar` file is stored in an Ubuntu image. For ArchLinux it is `/usr/share/java/plantuml/plantuml.jar`.
+
 
 
 **The nice-to-have tags are as follows:**
@@ -78,6 +80,8 @@ Note that one can use `doxygen -g <FILENAME>` to generate a basic configuration 
 - `GENERATE_TREEVIEW`: Set to `YES` to have a tree view on the left hand side of the webpage.
 - `USE_MATHJAX`: Set to `YES` to have the math formulas written in LaTeX math format rendered in the output HTML files.
 - `TEMPLATE_RELATIONS`: Set to `YES`.
+
+
 
 ## Create `main.yml`:
 Create the hidden `.github` folder. Inside, create another folder named `workflows`. (`mkdir -p .github/workflows`)
