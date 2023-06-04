@@ -5,6 +5,7 @@ date:   2023-06-04 12:32:45 +0330
 categories:
 ---
 <img align="right" width="150" src="https://www.doxygen.nl/images/doxygen.png">
+<img align="right" width="150" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
 
 # Automated Doxygen deployment on Github Pages with diagrams
 It took me almost 5 hours to figure out how to use Github Actions to automatically build and deploy Doxygen documentation on Github Pages when commits are pushed into a Github repository.
