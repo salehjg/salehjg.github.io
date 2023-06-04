@@ -19,6 +19,9 @@ style: dark # dark (default) or light
 #listen_for_clients_preferred_style: true # true or false (default)
 
 markdown: kramdown
+kramdown:
+  input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
+  hard_wrap: true
 
 plugins:
   - jekyll-seo-tag
