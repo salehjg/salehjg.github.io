@@ -82,7 +82,7 @@ Note that one can use `doxygen -g <FILENAME>` to generate a basic configuration 
 ## Create `main.yml`:
 Create the hidden `.github` folder. Inside, create another folder named `workflows`. (`mkdir -p .github/workflows`)
 Then create a file named `main.yml` inside `workflows` directory with the content:
-~~~
+~~~ yaml
 # This is a basic workflow to help you get started with Actions
 
 name: Doxygen Action
