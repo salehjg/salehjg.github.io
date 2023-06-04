@@ -36,10 +36,7 @@ This is required since we want `PlantUML` and `Graphwiz/dot` support.
 The path to `plantuml.jar` and `dot` executable should be specified in the Doxygen config file. 
 
 Usually, this is done using CMake and its `FindProgram()` and `FindFile()` functionalities 
-(checkout these examples: 
-[CGenCpp/cmake/FindPlantUML.cmake](https://github.com/salehjg/CGenCpp/blob/main/cmake/FindPlantUML.cmake),
-[CGenCpp/cmake/FindDot.cmake](https://github.com/salehjg/CGenCpp/blob/main/cmake/FindDot.cmake)
-)
+(checkout these examples: [FindPlantUML.cmake](https://github.com/salehjg/CGenCpp/blob/main/cmake/FindPlantUML.cmake), [FindDot.cmake](https://github.com/salehjg/CGenCpp/blob/main/cmake/FindDot.cmake))
 but for Github Actions we want to isolate building the project from building the doxygen documentation in order to 
 avoid installing all the dependencies that the project needs to be built.
 
