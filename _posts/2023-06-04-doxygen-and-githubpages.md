@@ -4,7 +4,6 @@ title:  "Automated Doxygen deployment on Github Pages with diagrams"
 date:   2023-06-04 12:32:45 +0330
 categories:
 ---
-<img align="right" width="150" src="https://www.doxygen.nl/images/doxygen.png">
 <img align="right" width="150" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
 
 # Automated Doxygen deployment on Github Pages with diagrams
