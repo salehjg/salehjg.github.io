@@ -6,6 +6,18 @@ categories:
 ---
 <img align="right" width="150" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
 
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<pre class="prettyprint">
+class Voila {
+public:
+  // Voila
+  static const string VOILA = "Voila";
+
+  // will not interfere with embedded <a href="#voila2">tags</a>.
+}
+</pre>
+
+
 # Automated Doxygen deployment on Github Pages with diagrams
 It took me almost 5 hours to figure out how to use Github Actions to automatically build and deploy Doxygen documentation on Github Pages when commits are pushed into a Github repository.
 There are some [basic tutorials out there](https://github.com/satu0king/Github-Documentation-With-Doxygen) but what I was really intereseted in was configuring Doxygen to use `PlantUML` and `Graphwiz/dot` to draw the class hierarchy, as well as some other handy diagrams.
