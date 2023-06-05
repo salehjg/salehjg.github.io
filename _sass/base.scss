@@ -30,8 +30,6 @@ h5 { font-size: $h5-font-size;  margin: 0px;  margin-top: 25px;  font-weight: bo
 h6 { font-size: $h6-font-size;  margin: 0px;  margin-top: 25px;  font-weight: bold;  color: var(--text-color); }
 
 p, ul, ol { margin: 0px;  color: var(--text-color); }
-a { text-decoration: underline;  color: var(--link-color); }
-a:hover { color: var(--background-color); background-color: var(--base-color); }
 @media only screen and (max-device-width: 1100px) { * { font-size: $mobile-font-size !important; } }
 
 /**
@@ -100,6 +98,18 @@ pre {
   border: 1px solid black;
   border-radius: 30px
 }
+
+/*links*/
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:hover {
+  color: #071bf2;
+  background-color: #0b1c4f;
+  text-decoration: underline;
+}
+
 .highlight .hll { background-color: var(--code-color-2); }
 .highlight .c { color: var(--code-color-1); font-style: italic } /* Comment */
 .highlight .err { color: var(--code-color-3); background-color: var(--code-color-4); } /* Error */
