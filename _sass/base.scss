@@ -88,6 +88,12 @@ textarea { vertical-align: top; }
 .lineno { color: var(--code-color-1); margin-right: 15px; }
 figure.highlight { margin: 5px 0; }
 
+code {
+  background-color: #424242;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 10px
+}
 pre {
   background-color: #424242;
   padding: 1em;
