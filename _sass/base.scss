@@ -89,9 +89,10 @@ textarea { vertical-align: top; }
 figure.highlight { margin: 5px 0; }
 
 :not(pre) > code {
-  background-color: #424242;
-  padding: 0em;
-  border-radius: 4px
+  background-color: #291212;
+  padding: 0.2em;
+  border: 1px solid black;
+  border-radius: 6px
 }
 pre {
   background-color: #242424;
