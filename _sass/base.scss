@@ -17,7 +17,7 @@
 /**
  * Style variables
  */
-$base-font-family:     'Source Code Pro', monospace !default;
+$base-font-family:     'JetBrainsMonoNL', monospace !default;
 $base-font-size:       12.5px !default;
 $h1-font-size:       35px !default;
 $h2-font-size:       30px !default;
@@ -38,10 +38,8 @@ body {
   background-color: var(--background-color);  
   margin: 0 auto;  padding: 0;  
   
-  //font-family: $base-font-family;  
-  //font-size: $base-font-size;  
-  font-family: "JetBrainsMonoNL", monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif, system-ui;
-  font-size: 0.9rem;
+  font-family: $base-font-family;  
+  font-size: $base-font-size;  
   
   color: var(--text-color);  
   text-align: left;  
