@@ -1,5 +1,18 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+//@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+@font-face {
+    font-family: 'JetBrainsMonoNL';
+    src: url('https://ovelny.sh/assets/fonts/JetBrainsMonoNL-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrainsMonoNL';
+    src: url('https://ovelny.sh/assets/fonts/JetBrainsMonoNL-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
 
 /**
  * Style variables
@@ -21,7 +34,19 @@ $container-max-width:  1200px !default;
 /**
  * Global
  */
-body { background-color: var(--background-color);  margin: 0 auto;  padding: 0;  font-family: $base-font-family;  font-size: $base-font-size;  color: var(--text-color);  text-align: left;  line-height: $base-line-height !important; }
+body { 
+  background-color: var(--background-color);  
+  margin: 0 auto;  padding: 0;  
+  
+  //font-family: $base-font-family;  
+  //font-size: $base-font-size;  
+  font-family: "JetBrainsMonoNL", monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif, system-ui;
+  font-size: 0.9rem;
+  
+  color: var(--text-color);  
+  text-align: left;  
+  line-height: $base-line-height !important; 
+}
 h1 { font-size: $h1-font-size;  margin: 0px;  margin-top: 35px;  font-weight: bold;  color: var(--text-color); }
 h2 { font-size: $h2-font-size;  margin: 0px;  margin-top: 30px;  font-weight: bold;  color: var(--text-color); }
 h3 { font-size: $h3-font-size;  margin: 0px;  margin-top: 25px;  font-weight: bold;  color: var(--text-color); }
