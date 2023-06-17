@@ -18,6 +18,6 @@ permalink: /publication/
 > Nothing.
 
 # Work in Progress
-> **DNN-Fuser: A generic framework to design optimized fused dataflow accelerators for CPUs/GPUs/FPGAs**
+> **DeepFusion: A C++ framework to design optimized fused-layer accelerators for CPUs/GPUs/FPGAs**
 > * _Rethinking how ML/DL models are structured and executed_
 > * _In progress since Feb. 2022_
