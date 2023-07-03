@@ -6,25 +6,25 @@ permalink: /cv/
 
 # Education
 ## MSc (2016~2019)
-> Electrical Engineering, Integrated Circuit Design
-> University of Tabriz, Iran
-> **GPA**: 17.24 / 20
-> **Supervisor**: Prof. Ghader Karimian
-> **Adviser**: Prof. Maryam Shoaran
-> **Topic**: "Deep Learning on Heterogeneous Systems, Hardware Implementation of a 3D Object Recognition Algorithm"
-> **Summary**: GPU (CUDA, OCL) and FPGA (HLS) based implementation of a point cloud classifier network called DGCNN.
+* Electrical Engineering, Integrated Circuit Design
+* University of Tabriz, Iran
+* **GPA**: 17.24 / 20
+* **Supervisor**: Prof. Ghader Karimian
+* **Adviser**: Prof. Maryam Shoaran
+* **Topic**: "Deep Learning on Heterogeneous Systems, Hardware Implementation of a 3D Object Recognition Algorithm"
+* **Summary**: GPU (CUDA, OCL) and FPGA (HLS) based implementation of a point cloud classifier network called DGCNN.
 
 ## BSc (2012~2016)
-> Electrical Engineering
-> University of Tabriz, Iran
-> **GPA**: 16.40 / 20
+* Electrical Engineering
+* University of Tabriz, Iran
+* **GPA**: 16.40 / 20
 
 # Work Experience
 ## Embedded and IoT Systems Designer
-> Ava Mechatronics (now owned by Sobh Parlar Asia)
-> Part-time employment (Oct. 2017 ~ Aug. 2018)
+* Ava Mechatronics (now owned by Sobh Parlar Asia)
+* Part-time employment (Oct. 2017 ~ Aug. 2018)
 ## Intern
-> Ava Mechatronics (2016)
+* Ava Mechatronics (2016)
 
 # Skills
 * C, C++ (+ OOP, design patterns, and template metaprogramming)
