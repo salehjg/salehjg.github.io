@@ -33,8 +33,8 @@ permalink: /cv/
 * Python
 * GPGPU (CUDA and OpenCL)
 * FPGA
-        * Mostly Xilinx devices such as Zynq-7020, Ultrascale+ VU9P, and ...
-        * Verilog, HLS
+    * Mostly Xilinx devices such as Zynq-7020, Ultrascale+ VU9P, and ...
+    * Verilog, HLS
 * Embedded
     * MCU 
         * STMicro: STM32, STM8 
