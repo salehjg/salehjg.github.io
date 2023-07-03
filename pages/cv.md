@@ -64,8 +64,8 @@ permalink: /cv/
   * Tensorflow
   * PCL, cuBLAS, OpenCV, ...
 # Languages
-> Azeri and Persian (Native)
-> English
-  > TOEFL iBT: 97 (Nov. 2020) (R:26, L:24, S:23, W:24)
-  > TOEFL iBT: ? (Jul. 2023)
-> Swedish (beginner)
+* Azeri and Persian (Native)
+* English
+  * TOEFL iBT \[Nov. 2020\]: 97 (R:26, L:24, S:23, W:24)
+  * TOEFL iBT \[Jul. 2023\]: ? 
+* Swedish (beginner)
