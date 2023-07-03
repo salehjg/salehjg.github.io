@@ -5,6 +5,7 @@ permalink: /cv/
 ---
 
 # Education
+<ul>
 ## MSc (2016~2019)
 * Electrical Engineering, Integrated Circuit Design
 * University of Tabriz, Iran
@@ -13,6 +14,7 @@ permalink: /cv/
 * **Adviser**: Prof. Maryam Shoaran
 * **Topic**: "Deep Learning on Heterogeneous Systems, Hardware Implementation of a 3D Object Recognition Algorithm"
 * **Summary**: GPU (CUDA, OCL) and FPGA (HLS) based implementation of a point cloud classifier network called DGCNN.
+</ul>
 
 ## BSc (2012~2016)
 * Electrical Engineering
