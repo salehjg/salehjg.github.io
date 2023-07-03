@@ -63,6 +63,8 @@ permalink: /cv/
     * SymPy, NumPy, SymEngine, ...
     * Tensorflow
     * PCL, cuBLAS, OpenCV, ...
+
+
 # Languages
 * Azeri and Persian (Native)
 * English
