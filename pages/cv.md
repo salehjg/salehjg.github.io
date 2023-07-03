@@ -20,9 +20,11 @@ permalink: /cv/
 * **GPA**: 16.40 / 20
 
 # Work Experience
+  
 ## Embedded and IoT Systems Designer
 * Ava Mechatronics (now owned by Sobh Parlar Asia)
 * Part-time employment (Oct. 2017 ~ Aug. 2018)
+  
 ## Intern
 * Ava Mechatronics (2016)
 
