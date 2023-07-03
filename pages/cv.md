@@ -31,41 +31,41 @@ permalink: /cv/
 * Python
 * GPGPU (CUDA and OpenCL)
 * FPGA
-  * Mostly Xilinx devices such as Zynq-7020, Ultrascale+ VU9P, and ...
-  * Verilog, HLS
+        * Mostly Xilinx devices such as Zynq-7020, Ultrascale+ VU9P, and ...
+        * Verilog, HLS
 * Embedded
-  * MCU 
-    * STMicro: STM32, STM8 
-    * NXP MCUs: LPC1768
-    * Atmel (mostly deprecated): AT91SAM7-family (ARM), AVR-family (ATMEGA, ATTINY, ...)
-  * Interface Controllers
-    * Cypress: USBFX2LP, USBFX3
-  * Wireless
-    * CC3200, ESP8266, ESP32, NRF24L01, ...
-  * PCB
-    * Altium Designer
-    * Mostly low-frequency digital, and mixed-signal designs
+    * MCU 
+        * STMicro: STM32, STM8 
+        * NXP MCUs: LPC1768
+        * Atmel (mostly deprecated): AT91SAM7-family (ARM), AVR-family (ATMEGA, ATTINY, ...)
+    * Interface Controllers
+        * Cypress: USBFX2LP, USBFX3
+    * Wireless
+        * CC3200, ESP8266, ESP32, NRF24L01, ...
+    * PCB
+        * Altium Designer
+        * Mostly low-frequency digital, and mixed-signal designs
 * Android
-  * Java
-  * NDK (+CMake)
+    * Java
+    * NDK (+CMake)
 * Typesetting
-  * TEX, TEX-Sketch, TEX-TikZ, MS Office
+    * TEX, TEX-Sketch, TEX-TikZ, MS Office
 * GNU Linux
-  * Distros: Mostly ArchLinux, Ubuntu, CentOS
-  * Build Systems: Mostly CMake
-  * Version Ctrl: Git
+    * Distros: Mostly ArchLinux, Ubuntu, CentOS
+    * Build Systems: Mostly CMake
+    * Version Ctrl: Git
 * Cloud
-  * AWS-EC2 (+ F1 instances)
+    * AWS-EC2 (+ F1 instances)
 * SBC
-  * Raspberry PIs (RPI3)
-  * Nvidia Jetson (TK1)
+    * Raspberry PIs (RPI3)
+    * Nvidia Jetson (TK1)
 * Frameworks and Libraries
-  * SymPy, NumPy, SymEngine, ...
-  * Tensorflow
-  * PCL, cuBLAS, OpenCV, ...
+    * SymPy, NumPy, SymEngine, ...
+    * Tensorflow
+    * PCL, cuBLAS, OpenCV, ...
 # Languages
 * Azeri and Persian (Native)
 * English
-  * TOEFL iBT \[Nov. 2020\]: 97 (R:26, L:24, S:23, W:24)
-  * TOEFL iBT \[Jul. 2023\]: ? 
+    * TOEFL iBT \[Nov. 2020\]: 97 (R:26, L:24, S:23, W:24)
+    * TOEFL iBT \[Jul. 2023\]: ? 
 * Swedish (beginner)
