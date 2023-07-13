@@ -71,5 +71,5 @@ permalink: /cv/
 * Azeri and Persian (Native)
 * English
     * TOEFL iBT \[Nov. 2020\]: 97 (R:26, L:24, S:23, W:24)
-    * TOEFL iBT \[Jul. 2023\]: ? 
+    * TOEFL iBT \[Jul. 2023\]: 102 (R:28 C1, L:23 C1, S:24 B2, W:27 C1) [Performance Descriptors for TOEFL iBT](https://www.ets.org/pdfs/toefl/toefl-ibt-performance-descriptors.pdf?_gl=1*1gou4cm*_gcl_au*ODM4ODM3NTYwLjE2ODIwNzg2MDI.*_ga*MTA0ODU3OTQ5LjE2ODIwNzg2MDM.*_ga_T2TH8KSGFZ*MTY4OTE4ODczMi43LjEuMTY4OTE4ODkzNS41My4wLjA.&_ga=2.96467164.1912680970.1689188731-104857949.1682078603)
 * Swedish (beginner)
