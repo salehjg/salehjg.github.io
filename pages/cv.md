@@ -25,7 +25,7 @@ permalink: /cv/
 * Ava Mechatronics (now owned by Sobh Parlar Asia)
 * Part-time employment (Oct. 2017 ~ Aug. 2018)
   
-## Intern
+## Extern
 * Ava Mechatronics (2016)
 
 # Skills
