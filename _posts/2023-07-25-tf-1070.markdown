@@ -13,10 +13,10 @@ It seems that the recent Nvidia drivers or CUDA runtimes are tweaking GPU and/or
 
 | **OS**           | **KERNEL**   | **TF**       | **TF PKG/REPO**              | **CUDA**       | **CUDNN** | **CUDA PKG/REPO** | **STATUS** |
 |------------------|--------------|--------------|------------------------------|----------------|-----------|-------------------|------------|
-| ARCH             | ?            | 2.12.0       | arch/extra (tensorflow-cuda) | 11.8           | 8.6       | arch/extra        | CRASHES    |
-| UBUNTU 22.04 LTS | ?            | 2.12.0       | source, PyPI                 | 11.8           | 8.6       | deb (Nvidia)      | CRASHES    |
-| UBUNTU 20.04 LTS | 5.4.0-100-GE | 2.5.0~2.11.0 | PyPI                         | 11.2           | 8.1       | deb (Nvidia)      | CRASHES    |
-| UBUNTU 18.04 LTS | 5.0.0-23-GE  | 2.3.0        | PyPI                         | 10.1 - Update2 | 7.6       | deb (Nvidia)      | **WORKS**  |
+|       ARCH       |       ?      |    2.12.0    | arch/extra (tensorflow-cuda) |      11.8      |    8.6    |     arch/extra    |   CRASHES  |
+| UBUNTU 22.04 LTS |       ?      |    2.12.0    |         source, PyPI         |      11.8      |    8.6    |    deb (Nvidia)   |   CRASHES  |
+| UBUNTU 20.04 LTS | 5.4.0-100-GE | 2.5.0~2.11.0 |             PyPI             |      11.2      |    8.1    |    deb (Nvidia)   |   CRASHES  |
+| UBUNTU 18.04 LTS |  5.0.0-23-GE |     2.3.0    |             PyPI             | 10.1 - Update2 |    7.6    |    deb (Nvidia)   |  **WORKS** |
 
 
 Anyways, I am still happy to be able to use my old GTX1070m for deep learning. Tensorflow 2.3 is not that old and still offers good compatibility with the more recent scripts targetting TF 2.13.
