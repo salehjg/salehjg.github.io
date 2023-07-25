@@ -142,6 +142,16 @@ a:hover {
   text-decoration: underline;
 }
 
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+th, td {
+  background-color: #96D4D4;
+  border-radius: 10px;
+}
+
 .highlight .hll { background-color: var(--code-color-2); }
 .highlight .c { color: var(--code-color-1); font-style: italic } /* Comment */
 .highlight .err { color: var(--code-color-3); background-color: var(--code-color-4); } /* Error */
