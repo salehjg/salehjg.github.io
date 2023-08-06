@@ -36,6 +36,10 @@ with tf.io.TFRecordWriter(filename, options=options) as tfr_train:
 ## Examples 
 TODO.
 
+## Links
+1. [TF Documentation](https://www.tensorflow.org/api_docs/python/tf/data/TFRecordDataset)
+1. [Feeding-TensorFlow-from-drive-MNIST-Example](https://github.com/datamadness/Feeding-TensorFlow-from-drive-MNIST-Example)
+1. [Mnist-Tfrecord](https://github.com/TanyaChutani/Mnist-Tfrecord/blob/master/notebook/TF2_0_ImageClassificationTFRecord.ipynb)
 
 
 
