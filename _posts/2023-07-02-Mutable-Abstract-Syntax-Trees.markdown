@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Mutable Abstract Syntax Trees"
+date:   2023-07-02 12:32:45 +0330
+categories:
+---
+
 # Mutable Abstract Syntax Trees
 ## Abstract Syntax Tree (AST)
 Abstract Syntax Trees or ASTs in short, are containers that represent a piece of code in a file or in some cases, the entirety of multiple files.
