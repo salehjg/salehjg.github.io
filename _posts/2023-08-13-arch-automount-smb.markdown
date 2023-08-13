@@ -27,16 +27,13 @@ Run `sudo nano /etc/systemd/system/mnt-rpi3.mount` and save the following conten
   Description=rpi3 smb mounter
   Requires=network-online.target
   After=network-online.service
-
 [Mount]
   What=//192.168.100.111/rpi3
   Where=/mnt/rpi3
   Options=uid=saleh,username=YOUR_NAS_USER,password=YOUR_PASSWORD
   Type=cifs
-
 [Install]
   WantedBy=multi-user.target
-
 ```
 
 ## Step 3
@@ -47,14 +44,11 @@ Run `sudo nano /etc/systemd/system/mnt-rpi3.automount` and save the following co
 ```
 [Unit]
 Description=Automount rpi3
-
 [Automount]
 Where=/mnt/rpi3/
 TimeoutIdleSec=3600
-
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 ## Step 4
