@@ -22,6 +22,7 @@ Run `sudo nano /etc/systemd/system/mnt-rpi3.mount` and save the following conten
 - IP (`192.168.100.111` with your server's IP)
 - Make sure the share point name is set to `rpi3`, otherwise the mount point's directory should also be renamed along with `rpi3` occurrences in `*.mount` and `*.automount` of Step 3.
 - Replace `YOUR_NAS_USER` and `YOUR_PASSWORD` with your NAS's register username and password (not a good idea to authenticate this way!!).
+
 ```
 [Unit]
   Description=rpi3 smb mounter
