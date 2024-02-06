@@ -30,9 +30,102 @@ pmbootstrap flasher flash_kernel
 Before running flasher commands, you have to reboot your phone to custom recovery mode. After normal reboot and after the vibration, press and hold only the volume-down key (dont hold any other key, including power). Now connect the usb cable and run the flasher commands.
 
 ## Firewall
+Connect the device with USB to your host. The IP address of the device should be `172.16.42.1`.  
+PostmarketOS uses Network Filter Tables. Please refer to [this page](https://wiki.postmarketos.org/wiki/Firewall) for more info.  
+The rules for allowing or blocking ports could be found at `/etc/nftables.d/`. For example, to allow SMB:   
+```
+sudo nano /etc/nftables.d/50-smb.nft
+```
+Then paste these into the file and save it:  
+```
+#!/usr/sbin/nft -f
+
+table inet filter {
+	chain input {
+		# allow ssh
+		tcp dport 22 accept comment "accept SSH"
+	}
+}
+```
+And finally, to reload the rules, run:  
+```
+sudo rc-service nftables restart
+```
 
 ## SD Card
+The device name for SD-card for mido is `mmcblk1` in my case. For a quick setup, you can format and automount it like this:  
+```
+sudo fdisk /dev/mmcblk1  # create a single partition in the SD-card.
+sudo mkfs.ext4 /dev/mmcblk1p1  # this will wipe the device, careful!
+sudo mkdir /mnt/sdcard
+sudo chown $USER /mnt/sdcard/
+```
+Now, edit your fstab to automount the partition on system boot:  
+```
+/dev/mmcblk1p1    /mnt/sdcard    ext4    defaults    0    0
+```
 
 ## Battery Life
 
 ## Samba Server
+Install Samba:
+```
+sudo apk add samba-server
+sudo smbpasswd -a $USER
+sudo nano /etc/samba/smb.conf
+```
+
+Then paste these configurations:  
+```
+[global]
+   workgroup = MYGROUP
+   server string = Samba Server
+   server role = standalone server
+   log file = /var/log/samba/%m.log
+   max log size = 50
+   interfaces = wlan0 usb0
+   dns proxy = no
+   kernel oplocks = yes
+
+[internal]
+   oplocks = False
+   level2 oplocks = False
+;  comment = My SMB server on mido
+   path = /home/saleh/00_shared
+;  valid users = saleh
+   public = no
+   writable = yes
+   printable = no
+;  create mask = 0765
+
+[sdcard]
+   oplocks = False
+   level2 oplocks = False
+;  comment = My SMB server on mido
+   path = /mnt/sdcard
+;  valid users = saleh
+   public = no
+   writable = yes
+   printable = no
+;  create mask = 0765
+
+```
+(Replace `saleh` with your username, make sure you have `/home/saleh/00_shared`. Note that `interfaces = wlan0 usb0` forces `smbd` to bind to the both interfaces.)
+
+And finally, to reload the config, run:  
+```
+sudo rc-service samba restart 
+sudo rc-update add samba  # enable the service on system boot
+sudo cat /var/log/samba/smbd.log  # to see if there were any errors.
+```
+
+When all set, reboot the device with `sudo reboot` and see if you have the SMB share accessible from the host:  
+```
+sudo mount -t cifs //172.16.42.1/internal /mnt/mido/internal/ -o nobrl,username=xxxxxx,password=xxxxxxx,workgroup=WORKGROUP,iocharset=utf8,uid=1000,gid=1000
+
+sudo mount -t cifs //172.16.42.1/sdcard /mnt/mido/sdcard/ -o nobrl,username=xxxxxxx,password=xxxxxxx,workgroup=WORKGROUP,iocharset=utf8,uid=1000,gid=1000
+```
+
+Please note that you have to change `xxxxxx` with your credentials. Also, to disable byte-range locking that causes issues with Zotero, I have added `nobrl` to the options. Without it, Zotero would hang after opening the database without any errors.
+
+
