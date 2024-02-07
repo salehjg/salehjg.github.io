@@ -66,6 +66,11 @@ Now, edit your fstab to automount the partition on system boot:
 ```
 
 ## Battery Life
+You can use a bash script such as this:  
+```
+echo "Battery: $(sudo cat /sys/class/power_supply/qcom-battery/capacity) -- $(sudo cat  /sys/class/power_supply/qcom-battery/status)"
+```
+
 
 ## Samba Server
 Install Samba:
