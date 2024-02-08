@@ -90,11 +90,9 @@ Then paste these configurations:
    max log size = 50
    interfaces = wlan0 usb0
    dns proxy = no
-   kernel oplocks = yes
+   socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=2048000 SO_SNDBUF=2048000
 
 [internal]
-   oplocks = False
-   level2 oplocks = False
 ;  comment = My SMB server on mido
    path = /home/saleh/00_shared
 ;  valid users = saleh
@@ -104,8 +102,6 @@ Then paste these configurations:
 ;  create mask = 0765
 
 [sdcard]
-   oplocks = False
-   level2 oplocks = False
 ;  comment = My SMB server on mido
    path = /mnt/sdcard
 ;  valid users = saleh
