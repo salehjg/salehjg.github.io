@@ -1,15 +1,13 @@
 ---
 layout: post
 title:  "Charles Bukowski's The Genius Of The Crowd"
-date:   2021-06-26 12:32:45 +0330
+date:   2024-02-26 12:32:45 +0330
 categories: poem
 ---
-# The Genius Of The Crowd
+# Charles Bukowski's The Genius Of The Crowd
 <img align="right" width="150" src="https://upload.wikimedia.org/wikipedia/en/e/e2/Charles_Bukowski_smoking.jpg">
 
-This was too good not to share with you. 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0doGM_6izYg?si=pB4ic0A_rM6jqpvW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[This was too good not to share with you.](https://www.youtube.com/watch?v=0doGM_6izYg)
 
 there is enough treachery, hatred violence absurdity in the average
 human being to supply any given army on any given day
