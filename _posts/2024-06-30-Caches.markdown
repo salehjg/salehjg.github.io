@@ -1,0 +1,100 @@
+---
+layout: post
+title:  "Everything About Caches"
+date:   2024-06-30 12:32:45 +0330
+categories: computerarch
+---
+# Cache
+A cache is a specialized memory that sits between a processor and its actual memory.
+
+## Types
+- Direct
+- Fully Associative
+- Set Associative
+
+## Pre-requisites
+### Physical Address
+Lets assume our physical address in N bits.
+
+### Block
+Lets assume our block address is B bits (block address, not word address, also address, not size).  
+A block of data is a number of consequitive words from memory. For example if our physical address is 16 bits and we seperate the high 14 bits, we will have a block of 4 bytes (if our memory is byte addressable) with the block address of 14 bits.
+
+### Tags
+Lets assume our TAG address is T bits.
+A tag is the address that the comparators in a cache IP will operate on. The smaller tags are, the cheaper and faster the cache becomes. The number of tags to compare also affects the speed and resource usage.
+
+### Word ID
+Lets assume our word address is W bits.  
+This is the local address to find the word in a data block (in the example above, the word ID address is 2 bits long).
+
+### Cache Line
+Each entry in a cache is called a line.
+
+
+## The Idea
+We want our data blocks to be stored in a temporary location closer to our processor that is called cache.
+Now, every data block has a block address.
+
+
+
+
+## Direct Cache
+#### Cache Line Count
+Lets assume we have 2^L cache lines. So we need L bits to address them. 
+The number of cache lines in a direct mapped cache. For example 8 cache lines need 3 line bits. 
+#### How it works
+TAG: (N-L-W) bits
+
+#### Flexibility
+A physical address can only be mapped to a cache entry where the line address bits match. Not very flexible. Causes a lot of cache misses (conflict-misses).
+
+
+
+
+
+## Fully Associative Cache
+We don't use line address to select the entry anymore. So we need to keep those bits inside the TAG.
+#### How it works
+TAG: (N-W) bits
+
+#### Flexibility
+Super flexible. Any physical address can be mapped into any cache entry. There are no hardwired line address bits to force the mapping, so, no more cache misses (conflict-misses).
+
+
+
+
+## Set Associative Cache
+An n-way set associative cache means that we have sets that contain `n` entries. We have to calculate the number of sets. Lets assume we need S bits to address the sets.
+
+#### How it works
+TAG: (N-S-W) bits
+
+#### Flexibility
+Better than direct cache, worse than fully associative cache. The hardwired bits are only the set address bits (`S`).
+
+
+## Cache Misses
+### Size Miss
+The cache size is too small and leads to a cache miss.
+### Compulsory Miss (cold miss)
+The cache does not have the data and it needs to be fetched from the memory.
+### Conflict Miss
+Two physical memory addresses are being mapped into a single cache entry because of the hardwired address bits. Fully associative caches have none, so they will not have any conflict misses. The direct caches are the worst.
+
+## Complexity
+- Direct Cache: Super fast and cheap; Too much conflict misses
+- Fully Associative Cache: No conflict misses; Too slow and complex, it needs a lot of comparators implemented in a combinatory fashion.
+- Set Associative Cache: Something in between. Less conflict misses than direct cache; A bit faster than fully associative cache.
+
+## Another way to see things
+- Direct caches are 1-way set associative.
+- Fully associative caches are L-way set associative. Remember that we called L as the number of cache lines.
+
+
+# References
+[Direct Caches](https://www.youtube.com/watch?v=zocwH0g-qQM)
+[Fully Associative Caches](https://www.youtube.com/watch?v=A0vR-ks3hsQ)
+[Set Associative Caches](https://www.youtube.com/watch?v=gr5M9CULUZw)
+
+
