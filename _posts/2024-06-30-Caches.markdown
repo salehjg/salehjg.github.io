@@ -102,6 +102,16 @@ The least frequently used eviction algorithm.
 Random eviction!
 
 
+## Cache Policies
+### Read Miss
+
+### Write Miss
+- Write Through: Write straight to the memory as well.
+- Write Back: Write to the memory on eviction.
+
+پپ
+پ
+
 # References
 [Direct Caches](https://www.youtube.com/watch?v=zocwH0g-qQM)
 [Fully Associative Caches](https://www.youtube.com/watch?v=A0vR-ks3hsQ)
