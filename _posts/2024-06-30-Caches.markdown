@@ -91,6 +91,16 @@ Two physical memory addresses are being mapped into a single cache entry because
 - Direct caches are 1-way set associative.
 - Fully associative caches are L-way set associative. Remember that we called L as the number of cache lines.
 
+## Eviction Algorithms
+### FIFO
+The oldest entry gets evicted. This is cheap to implement, but it's bad because it the entry might be old but used frequently.
+### LRU
+The least recently used eviction algorithm.
+### LFU
+The least frequently used eviction algorithm.
+### Random
+Random eviction!
+
 
 # References
 [Direct Caches](https://www.youtube.com/watch?v=zocwH0g-qQM)
