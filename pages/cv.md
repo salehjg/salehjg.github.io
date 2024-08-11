@@ -5,6 +5,10 @@ permalink: /cv/
 ---
 
 # Education
+## PhD Student (2023~present)
+* [Prof. B. Cosenza (supervisor)](cosenza.eu)
+* Computer Science
+* University of Salerno, Italy
 ## MSc (2016~2019)
 * Electrical Engineering, Integrated Circuit Design
 * University of Tabriz, Iran
@@ -29,9 +33,12 @@ permalink: /cv/
 * Ava Mechatronics (2016)
 
 # Skills
-* C, C++ (+ OOP, design patterns, and template metaprogramming)
+* C, C++
 * Python
-* GPGPU (CUDA and OpenCL)
+* GPGPU 
+    * CUDA
+    * OpenCL
+    * SYCL
 * FPGA
     * Mostly Xilinx devices such as Zynq-7020, Ultrascale+ VU9P, and ...
     * Verilog, HLS
@@ -54,7 +61,7 @@ permalink: /cv/
     * TEX, TEX-Sketch, TEX-TikZ, MS Office
 * GNU Linux
     * Distros: Mostly ArchLinux, Ubuntu, CentOS
-    * Build Systems: Mostly CMake
+    * Build Systems: CMake, Bazel
     * Version Ctrl: Git
 * Cloud
     * AWS-EC2 (+ F1 instances)
@@ -64,12 +71,12 @@ permalink: /cv/
 * Frameworks and Libraries
     * SymPy, NumPy, SymEngine, ...
     * Tensorflow
-    * PCL, cuBLAS, OpenCV, ...
+    * PCL, cuBLAS, OpenCV, oneMKL, ...
 
 
 # Languages
-* Azeri and Persian (Native)
+* Azeri (Native)
+* Persian (Native)
 * English
     * TOEFL iBT \[Nov. 2020\]: 97 (R:26, L:24, S:23, W:24)
     * TOEFL iBT \[Jul. 2023\]: 102 (R:28 C1, L:23 C1, S:24 B2, W:27 C1) [Performance Descriptors for TOEFL iBT](https://www.ets.org/pdfs/toefl/toefl-ibt-performance-descriptors.pdf?_gl=1*1gou4cm*_gcl_au*ODM4ODM3NTYwLjE2ODIwNzg2MDI.*_ga*MTA0ODU3OTQ5LjE2ODIwNzg2MDM.*_ga_T2TH8KSGFZ*MTY4OTE4ODczMi43LjEuMTY4OTE4ODkzNS41My4wLjA.&_ga=2.96467164.1912680970.1689188731-104857949.1682078603)
-* Swedish (beginner)
