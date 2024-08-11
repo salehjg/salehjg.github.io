@@ -9,6 +9,7 @@ permalink: /cv/
 * [Prof. B. Cosenza (supervisor)](cosenza.eu)
 * Computer Science
 * University of Salerno, Italy
+
 ## MSc (2016~2019)
 * Electrical Engineering, Integrated Circuit Design
 * University of Tabriz, Iran
