@@ -6,7 +6,7 @@ permalink: /cv/
 
 # Education
 ## PhD Student (2023~present)
-* [Prof. B. Cosenza (supervisor)](cosenza.eu)
+* [Prof. B. Cosenza (supervisor)](https://cosenza.eu/)
 * Computer Science
 * University of Salerno, Italy
 
