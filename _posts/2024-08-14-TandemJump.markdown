@@ -9,7 +9,7 @@ This post is not about computers and electronics. It is about my lifelong dream 
 Life is not perfect, but it does not mean we cannot make little changes here and there to feel truly alive.  
 
 ## Tandem Jump
-I have not looked up the definition of it, but basically, you wear a special harness around your body and get on a plane with an experienced skydiver instructor.
+I have not looked up the definition, but basically, you wear a special harness around your body and get on a plane with an experienced skydiver instructor.
 On the plane, the instructor will attach the hooks and jump off at an altitude of 4000. 
 
 ## Safety
