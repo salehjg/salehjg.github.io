@@ -11,7 +11,7 @@ categories:
 sudo pacman -S mesa mesa-utils nvidia-lts nvidia-prime nvidia-settings nvidia-utils
 sudo pacman -R xf86-video-nouveau bumblebee
 reboot
-sudo nvidia-xconfig --prime
+# sudo nvidia-xconfig --prime # only if you are not using wayland
 yay -S nvtop optimus-manager  # just install optimus-manager, you dont have to use it, it will sort out some issues silently.
 reboot
 ```
