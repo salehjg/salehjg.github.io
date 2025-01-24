@@ -11,5 +11,4 @@ sudo pacman -S qemu-system-riscv # only if you need it
 sudo systemctl restart systemd-binfmt
 ```
 
-Having `qemu-user-binfmt`, you can run binaries built for RISCV64 on your AMD64 machine. 
-This is essential for cross-compiling non-flexable projects for RISCV64 such as GCC.
+Having `qemu-user-binfmt`, you can run binaries built for RISCV64 on your AMD64 machine as a usual AMD64 binary. How amazing is that?
