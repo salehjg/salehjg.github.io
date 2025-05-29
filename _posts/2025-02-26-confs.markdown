@@ -7,4 +7,4 @@ categories: conference
 
 # The list of related conferences to AI/HPC
 
-<iframe src="https://raw.githubusercontent.com/salehjg/salehjg.github.io/refs/heads/master/images/conference_deadlines_plotly.html" width="100%" height="400"></iframe>
+<iframe src="https://salehjg.github.io/images/conference_deadlines_plotly.html" width="100%" height="400"></iframe>
