@@ -11,7 +11,7 @@ permalink: /findme/
 > [Click Here](https://orcid.org/0009-0003-1905-1537)
 
 ## Accounts
->* [LinkedIn](https://www.linkedin.com/in/saleh-jamali-929b8b51/)
+>* [LinkedIn](www.linkedin.com/in/saleh-jamali-golzar-929b8b51)
 >* [Google Scholar](https://scholar.google.com/citations?user=cYpKeoIAAAAJ&hl=en&authuser=1)
 >* [Springer](https://link.springer.com/search?dc.creator=Saleh%20Jamali%20Golzar)
 >* [Github](https://github.com/salehjg)
