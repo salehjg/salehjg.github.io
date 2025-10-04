@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "oneAPI icpx crashes when using cache config extension"
+title:  "oneAPI icpx crashes when using the cache config extension"
 date:   2025-10-04 12:32:45 +0330
 categories: oneapi
 ---
 
-# oneAPI icpx crashes when using cache config extension
+# oneAPI icpx crashes when using the cache config extension
 
 When experimenting with the [Intel SYCL cache configuration extension](https://github.com/intel/llvm/blob/sycl/sycl/doc/extensions/experimental/sycl_ext_intel_cache_config.asciidoc), I noticed that `icpx` crashes during compilation or produces an executable that crashes at runtime. 
 The problem shows up when the `sycl::ext::intel::experimental::cache_config` attribute is used in a kernel. This seems to point to an issue or incomplete support for the extension in the current `icpx` toolchain. 
