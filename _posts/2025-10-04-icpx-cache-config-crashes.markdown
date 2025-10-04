@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "oneAPI icpx crashes when using cache config extension"
-date:   2025-10-05 12:32:45 +0330
+date:   2025-10-04 12:32:45 +0330
 categories: oneapi
 ---
 
