@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "oneAPI icpx crashes when using the cache config extension"
+title:  "[New Publication] Demystifying Power-of-Two Quantization: Benchmarking Inference on AVX and RVV"
 date:   2026-01-12 12:32:45 +0330
 categories: oneapi
 ---
