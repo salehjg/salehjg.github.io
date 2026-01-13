@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "oneAPI icpx crashes when using the cache config extension"
+date:   2025-10-04 12:32:45 +0330
+categories: oneapi
+---
+
+# [New Publication] Demystifying Power-of-Two Quantization: Benchmarking Inference on AVX and RVV
+
+> [**Demystifying Power-of-Two Quantization: Benchmarking Inference on AVX and RVV**](https://ceur-ws.org/Vol-4130/paper109.pdf)
+> _The Second National Workshop on Scientific HPC in the pre-Exascale era, ITADATA'25, Turin, Italy_
+> [(Github Repo)](https://github.com/unisa-hpc/QPOT-VEC)
+>- Saleh Jamali Golzar, University of Salerno
+>- Giuseppe Pagano, University of Salerno
+>- Biagio Cosenza, University of Salerno
+
+
+
+
+
