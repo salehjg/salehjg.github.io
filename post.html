@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>saleh — post</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Markdown body styles (serif) */
+.md h1 { font-family: var(--mono); font-size: 22px; margin: 0 0 6px; }
+.md h2 { font-family: var(--mono); font-size: 15px; margin: 28px 0 10px; color: var(--fg); display: flex; align-items: baseline; gap: 10px; }
+.md h2::before { content: '##'; color: var(--prompt); font-weight: 700; }
+.md h3 { font-family: var(--mono); font-size: 14px; margin: 18px 0 6px; }
+.md h3::before { content: '### '; color: var(--fg-dimmer); }
+.md p, .md li { font-family: var(--serif); font-size: 16px; line-height: 1.7; }
+.md p { margin: 0 0 16px; }
+.md ul, .md ol { padding-left: 22px; margin: 0 0 16px; }
+.md li { margin-bottom: 6px; }
+.md li::marker { color: var(--fg-dimmer); }
+.md code {
+  font-family: var(--mono); font-size: 13px;
+  background: var(--bg-alt); padding: 1px 5px; border-radius: 2px;
+}
+.md pre {
+  font-family: var(--mono); font-size: 13px;
+  background: #090c12; border: 1px solid var(--border-hi); border-radius: 2px;
+  padding: 12px 14px; overflow-x: auto; line-height: 1.55;
+  margin: 0 0 18px;
+}
+.md pre code { background: none; padding: 0; }
+.md blockquote {
+  border-left: 2px solid var(--border-hi);
+  padding: 2px 14px;
+  color: var(--fg-dim);
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-style: italic;
+}
+.md hr { border: none; border-top: 1px dashed var(--border-hi); margin: 26px 0; }
+.md a { color: var(--fg); border-bottom: 1px solid var(--border-hi); }
+.md a:hover { color: var(--prompt); border-bottom-color: var(--prompt); }
+
+.post-meta {
+  color: var(--fg-dim);
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-family: var(--mono);
+}
+.post-meta .date { color: var(--string); }
+.post-tags {
+  display: inline-flex; gap: 6px; margin-left: 8px;
+}
+.post-tags .tag {
+  font-size: 11px; color: var(--keyword);
+  border: 1px solid var(--border-hi); padding: 0 5px; border-radius: 2px;
+}
+.post-container { max-width: var(--content-max); }
+</style>
+</head>
+<body data-page="posts">
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-line"><span class="prompt">$</span> whoami</div>
+      <div class="brand-name">saleh</div>
+      <div class="brand-sub">cs/ml · phd candidate</div>
+    </div>
+    <div class="nav-section-label">pages</div>
+    <ul class="nav">
+      <li><a href="index.html"        data-nav="home"><span class="hash">01</span>home</a></li>
+      <li><a href="research.html"     data-nav="research"><span class="hash">02</span>research</a></li>
+      <li><a href="publications.html" data-nav="publications"><span class="hash">03</span>publications</a></li>
+      <li><a href="projects.html"     data-nav="projects"><span class="hash">04</span>projects</a></li>
+      <li><a href="posts.html"        data-nav="posts"><span class="hash">05</span>posts</a></li>
+      <li><a href="cv.html"           data-nav="cv"><span class="hash">06</span>cv</a></li>
+      <li><a href="contact.html"      data-nav="contact"><span class="hash">07</span>contact</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div>last updated · 2026.04.19</div>
+      <div><a href="#">github</a> · <a href="#">scholar</a> · <a href="#">bsky</a></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="cmd-line" id="cmd">
+      <span class="prompt">saleh@laptop</span>:<span class="arg">~/posts</span>$ less <span class="flag" id="slug-chip">—</span>
+    </div>
+
+    <div class="post-container">
+      <div id="post-header"></div>
+      <div class="md" id="post-body">
+        <p class="muted"># loading…</p>
+      </div>
+
+      <hr class="rule">
+      <p class="muted" style="font-family:var(--mono);font-size:12px">
+        ← <a href="posts.html">all posts</a>
+        &nbsp;·&nbsp;
+        <a id="gh-link" href="#" target="_blank" rel="noopener">edit on github</a>
+      </p>
+    </div>
+  </main>
+
+</div>
+
+<!-- markdown renderer -->
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+
+<script>
+(async function () {
+  const params = new URLSearchParams(location.search);
+  const slug = params.get('slug');
+  const body = document.getElementById('post-body');
+  const header = document.getElementById('post-header');
+  const slugChip = document.getElementById('slug-chip');
+  const ghLink = document.getElementById('gh-link');
+
+  if (!slug) {
+    body.innerHTML = `<p class="muted"># no slug — <a href="posts.html">browse posts</a>.</p>`;
+    return;
+  }
+
+  slugChip.textContent = `${slug}.md`;
+  ghLink.href = `https://github.com/YOUR-USERNAME/YOUR-REPO/edit/main/posts/${slug}.md`;
+
+  let raw;
+  try {
+    const res = await fetch(`posts/${slug}.md`, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    raw = await res.text();
+  } catch (e) {
+    body.innerHTML = `<p class="muted"># failed to load <code>posts/${slug}.md</code> — ${e.message}</p>`;
+    return;
+  }
+
+  // parse YAML-ish frontmatter (title, date, tags, summary)
+  const fm = {};
+  const m = raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n/);
+  let md = raw;
+  if (m) {
+    md = raw.slice(m[0].length);
+    m[1].split('\n').forEach(line => {
+      const kv = line.match(/^(\w+)\s*:\s*(.*)$/);
+      if (!kv) return;
+      let [, k, v] = kv;
+      v = v.trim();
+      // strip surrounding quotes
+      if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+        v = v.slice(1, -1);
+      }
+      // parse inline array: [a, b, c]
+      if (v.startsWith('[') && v.endsWith(']')) {
+        v = v.slice(1, -1).split(',').map(s => s.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
+      }
+      fm[k] = v;
+    });
+  }
+
+  // Title and meta
+  const title = fm.title || slug;
+  document.title = `saleh — ${title}`;
+  const tags = Array.isArray(fm.tags) ? fm.tags : [];
+  header.innerHTML = `
+    <h1><span class="hash">#</span>${title}</h1>
+    <div class="post-meta">
+      <span class="date">${fm.date || ''}</span>
+      ${tags.length ? `<span class="post-tags">${tags.map(t => `<span class="tag">${t}</span>`).join('')}</span>` : ''}
+    </div>
+  `;
+
+  // Render markdown
+  marked.setOptions({ breaks: false, gfm: true });
+  body.innerHTML = marked.parse(md);
+})();
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

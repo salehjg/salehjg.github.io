@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>saleh — publications</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="publications">
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-line"><span class="prompt">$</span> whoami</div>
+      <div class="brand-name">saleh</div>
+      <div class="brand-sub">CS/EE · phd candidate</div>
+    </div>
+    <div class="nav-section-label">pages</div>
+    <ul class="nav">
+      <li><a href="index.html"        data-nav="home"><span class="hash">01</span>home</a></li>
+      <li><a href="research.html"     data-nav="research"><span class="hash">02</span>research</a></li>
+      <li><a href="publications.html" data-nav="publications"><span class="hash">03</span>publications</a></li>
+      <li><a href="projects.html"     data-nav="projects"><span class="hash">04</span>projects</a></li>
+      <li><a href="posts.html"        data-nav="posts"><span class="hash">05</span>posts</a></li>
+      <li><a href="cv.html"           data-nav="cv"><span class="hash">06</span>cv</a></li>
+      <li><a href="contact.html"      data-nav="contact"><span class="hash">07</span>contact</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div>last updated · 2026.04.21</div>
+      <div><a href="https://github.com/salehjg">github</a> · <a href="https://scholar.google.com/citations?user=cYpKeoIAAAAJ&hl=en&authuser=1">scholar</a> · <a href="https://orcid.org/0009-0003-1905-1537">orcid</a></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="cmd-line">
+      <span class="prompt">saleh@laptop</span>:<span class="arg">~/pubs</span>$ grep <span class="flag">--tag</span> <span class="arg">*</span>
+    </div>
+
+    <h1><span class="hash">#</span>publications</h1>
+    <p class="lede">grouped by year, newest first. click a tag to filter. <span class="muted">(<span id="pub-count">—</span>)</span></p>
+
+    <div class="filter-bar" id="filter-bar">
+      <span class="label">filter:</span>
+      <!-- tag buttons injected by JS -->
+      <button class="clear" id="clear-filter" hidden>clear ✕</button>
+    </div>
+
+    <div class="prose" id="pub-list"></div>
+  </main>
+
+</div>
+
+<script>
+/* ---------- Publication data ---------- */
+let PUBS = [];
+
+/* ---------- State ---------- */
+let activeTags = new Set();
+
+/* ---------- Render ---------- */
+function allTags() {
+  const counts = {};
+  PUBS.forEach(p => p.tags.forEach(t => counts[t] = (counts[t]||0)+1));
+  return Object.entries(counts).sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0]));
+}
+
+function renderFilterBar() {
+  const bar = document.getElementById('filter-bar');
+  // remove existing tag buttons
+  bar.querySelectorAll('.tag').forEach(n => n.remove());
+  const clearBtn = document.getElementById('clear-filter');
+  const tags = allTags();
+  tags.forEach(([t, n]) => {
+    const b = document.createElement('button');
+    b.className = 'tag' + (activeTags.has(t) ? ' active' : '');
+    b.textContent = `${t} (${n})`;
+    b.addEventListener('click', () => {
+      if (activeTags.has(t)) activeTags.delete(t); else activeTags.add(t);
+      render();
+    });
+    bar.insertBefore(b, clearBtn);
+  });
+  clearBtn.hidden = activeTags.size === 0;
+}
+
+function matchesFilter(p) {
+  if (activeTags.size === 0) return true;
+  // AND semantics: pub must include every active tag
+  for (const t of activeTags) if (!p.tags.includes(t)) return false;
+  return true;
+}
+
+function authorsHtml(authors) {
+  return authors.map(a => /^S\.?\s*Jamali/i.test(a)
+    ? `<span class="me">${a}</span>`
+    : a
+  ).join(', ');
+}
+
+function linksHtml(p) {
+  const parts = [];
+  if (p.links.pdf)    parts.push(`<a href="${p.links.pdf}">[pdf]</a>`);
+  if (p.links.doi)    parts.push(`<a href="${p.links.doi}">[doi]</a>`);
+  if (p.links.arxiv)  parts.push(`<a href="${p.links.arxiv}">[arxiv]</a>`);
+  if (p.links.code)   parts.push(`<a href="${p.links.code}">[code]</a>`);
+  if (p.links.poster) parts.push(`<a href="${p.links.poster}">[poster]</a>`);
+  parts.push(`<button data-bib="${p.id}">[bibtex]</button>`);
+  return parts.join(' ');
+}
+
+function renderList() {
+  const list = document.getElementById('pub-list');
+  list.innerHTML = '';
+
+  const filtered = PUBS.filter(matchesFilter);
+  document.getElementById('pub-count').textContent =
+    filtered.length === PUBS.length
+      ? `${PUBS.length} total`
+      : `${filtered.length} of ${PUBS.length}`;
+
+  const byYear = {};
+  filtered.forEach(p => (byYear[p.year] ||= []).push(p));
+  const years = Object.keys(byYear).map(Number).sort((a,b) => b-a);
+
+  if (years.length === 0) {
+    list.innerHTML = `<p class="muted"># no publications match these filters.</p>`;
+    return;
+  }
+
+  for (const y of years) {
+    const group = document.createElement('div');
+    group.className = 'year-group';
+    group.innerHTML = `<div class="year-label">── ${y} ──</div>`;
+
+    for (const p of byYear[y]) {
+      const pub = document.createElement('div');
+      pub.className = 'pub';
+      pub.innerHTML = `
+        <div class="pub-title">${p.title}</div>
+        <div class="pub-authors">${authorsHtml(p.authors)}</div>
+        <div class="pub-venue">
+          <span class="venue-name">${p.venue}</span>${p.note ? ` · ${p.note}` : ''}
+          <span class="tags">${p.tags.map(t => `<span class="tag" data-tag="${t}">${t}</span>`).join('')}</span>
+        </div>
+        <div class="pub-links">${linksHtml(p)}</div>
+        <div class="bibtex-panel" id="bib-${p.id}" hidden></div>
+      `;
+      group.appendChild(pub);
+    }
+    list.appendChild(group);
+  }
+
+  // bibtex buttons
+  list.querySelectorAll('button[data-bib]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-bib');
+      const pub = PUBS.find(x => x.id === id);
+      const panel = document.getElementById(`bib-${id}`);
+      if (panel.hasAttribute('hidden') || panel.dataset.mode !== 'open') {
+        panel.removeAttribute('hidden');
+        panel.dataset.mode = 'open';
+        panel.textContent = pub.bibtex;
+        // copy to clipboard
+        try { navigator.clipboard.writeText(pub.bibtex); } catch {}
+        const copied = document.createElement('span');
+        copied.className = 'copied';
+        copied.textContent = '✓ copied';
+        panel.appendChild(copied);
+      } else {
+        panel.setAttribute('hidden', '');
+        panel.dataset.mode = 'closed';
+      }
+    });
+  });
+
+  // tag-click to toggle filter
+  list.querySelectorAll('.tags .tag').forEach(el => {
+    el.addEventListener('click', () => {
+      const t = el.getAttribute('data-tag');
+      if (activeTags.has(t)) activeTags.delete(t); else activeTags.add(t);
+      render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+}
+
+function render() {
+  renderFilterBar();
+  renderList();
+}
+
+document.getElementById('clear-filter').addEventListener('click', () => {
+  activeTags.clear();
+  render();
+});
+
+(async function init() {
+  try {
+    const res = await fetch('assets/publications.json', { cache: 'no-cache' });
+    PUBS = await res.json();
+  } catch (e) {
+    document.getElementById('pub-list').innerHTML =
+      `<p class="muted"># failed to load publications.json — ${e.message}</p>`;
+    return;
+  }
+  render();
+})();
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

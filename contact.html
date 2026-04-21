@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>saleh — contact</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Contact-specific styles */
+.email-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-hi);
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--fg);
+  cursor: pointer;
+  transition: border-color .12s, color .12s;
+}
+.email-chip:hover { border-color: var(--prompt); color: var(--prompt); }
+.email-chip .at { color: var(--accent); }
+.email-chip .copy-hint {
+  font-size: 11px;
+  color: var(--fg-dimmer);
+  margin-left: 4px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+}
+.email-chip.copied .copy-hint { color: var(--prompt); }
+
+.orcid-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--bg-alt);
+  border: 1px dashed var(--border-hi);
+  border-radius: 2px;
+  max-width: var(--content-max);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+.orcid-row .orcid-mark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #A6CE39;
+  color: #1a1a1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-family: var(--mono);
+}
+.orcid-row .orcid-id {
+  color: var(--fg-dim);
+  font-variant-numeric: tabular-nums;
+}
+.orcid-row a {
+  margin-left: auto;
+  color: var(--prompt);
+  border: none;
+  font-size: 12px;
+}
+.orcid-row a:hover { text-decoration: underline; }
+
+/* Accounts grid */
+.accounts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2px;
+  max-width: var(--content-max);
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  background: var(--border);  /* acts as grid gap color */
+}
+.account {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg);
+  text-decoration: none;
+  border: none;
+  color: var(--fg);
+  transition: background .12s, color .12s;
+  position: relative;
+}
+.account:hover { background: var(--bg-alt); color: var(--prompt); }
+.account .glyph {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--fg-dim);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.account:hover .glyph { color: var(--prompt); }
+.account .meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+.account .label {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+}
+.account .handle {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fg-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.account:hover .handle { color: var(--fg); }
+.account .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--string);
+  margin-left: auto;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px var(--string);
+}
+.account.inactive .status-dot {
+  background: var(--fg-dimmer);
+  box-shadow: none;
+}
+.account.inactive .label::after {
+  content: ' · inactive';
+  color: var(--fg-dimmer);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.account.inactive:hover { color: var(--fg); }
+.account.inactive:hover .glyph { color: var(--fg-dim); }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 36px 0 12px;
+}
+.section-head::before {
+  content: '##';
+  color: var(--prompt);
+  font-weight: 700;
+  font-family: var(--mono);
+  font-size: 15px;
+}
+.section-head .title {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 500;
+}
+.section-head .count {
+  color: var(--fg-dimmer);
+  font-size: 11px;
+  font-family: var(--mono);
+}
+.section-head .rule {
+  flex: 1;
+  height: 1px;
+  border-top: 1px dashed var(--border-hi);
+}
+</style>
+</head>
+<body data-page="contact">
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-line"><span class="prompt">$</span> whoami</div>
+      <div class="brand-name">saleh</div>
+      <div class="brand-sub">CS/EE · phd candidate</div>
+    </div>
+    <div class="nav-section-label">pages</div>
+    <ul class="nav">
+      <li><a href="index.html"        data-nav="home"><span class="hash">01</span>home</a></li>
+      <li><a href="research.html"     data-nav="research"><span class="hash">02</span>research</a></li>
+      <li><a href="publications.html" data-nav="publications"><span class="hash">03</span>publications</a></li>
+      <li><a href="projects.html"     data-nav="projects"><span class="hash">04</span>projects</a></li>
+      <li><a href="posts.html"        data-nav="posts"><span class="hash">05</span>posts</a></li>
+      <li><a href="cv.html"           data-nav="cv"><span class="hash">06</span>cv</a></li>
+      <li><a href="contact.html"      data-nav="contact"><span class="hash">07</span>contact</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div>last updated · 2026.04.21</div>
+      <div><a href="https://github.com/salehjg">github</a> · <a href="https://scholar.google.com/citations?user=cYpKeoIAAAAJ&hl=en&authuser=1">scholar</a> · <a href="https://orcid.org/0009-0003-1905-1537">orcid</a></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="cmd-line">
+      <span class="prompt">saleh@laptop</span>:<span class="arg">~</span>$ finger <span class="arg">saleh</span>
+    </div>
+
+    <h1><span class="hash">#</span>contact</h1>
+    <p class="lede">email is best · everything else is mirrored below.</p>
+
+    <!-- ===== Email ===== -->
+    <div class="section-head">
+      <span class="title">email</span>
+      <span class="count">[ primary ]</span>
+      <span class="rule"></span>
+    </div>
+
+    <button id="email-chip" class="email-chip" type="button">
+      <span>SalehJamaliGolzar<span class="at">@</span>gmail.com</span>
+      <span class="copy-hint" id="email-hint">click to copy</span>
+    </button>
+
+    <!-- ===== ORCID ===== -->
+    <div class="section-head">
+      <span class="title">orcid</span>
+      <span class="count">[ researcher id ]</span>
+      <span class="rule"></span>
+    </div>
+
+    <div class="orcid-row">
+      <span class="orcid-mark">iD</span>
+      <span class="orcid-id">0009-0003-1905-1537</span>
+      <a href="https://orcid.org/0009-0003-1905-1537" target="_blank" rel="noopener">open ↗</a>
+    </div>
+
+    <!-- ===== Accounts ===== -->
+    <div class="section-head">
+      <span class="title">accounts</span>
+      <span class="count" id="acct-count"></span>
+      <span class="rule"></span>
+    </div>
+
+    <div class="accounts" id="accounts"></div>
+
+  </main>
+
+</div>
+
+<script>
+/* ----------------------------------------------------------------
+   Accounts — single source of truth.
+   `active: false` marks accounts I don't actively use.
+---------------------------------------------------------------- */
+const ACCOUNTS = [
+  { id: 'linkedin', label: 'LinkedIn',             handle: 'saleh-jamali-golzar',
+    href: 'https://linkedin.com/in/saleh-jamali-golzar-929b8b51', active: true,
+    icon: `<path d="M4 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-1 4h2v12H3V7Zm5 0h2v1.7h.03A2.2 2.2 0 0 1 12 7c2.1 0 2.5 1.4 2.5 3.2V19h-2v-4.3c0-1 0-2.4-1.5-2.4s-1.7 1.1-1.7 2.3V19H7V7Z" fill="currentColor"/>` },
+  { id: 'scholar', label: 'Google Scholar',        handle: 'user=cYpKeoIAAAAJ',
+    href: 'https://scholar.google.com/citations?user=cYpKeoIAAAAJ&hl=en&authuser=1', active: true,
+    icon: `<path d="M12 3 2 8l10 5 7-3.5V15h2V8L12 3Zm-5 9v3c0 1.7 2.5 3 5 3s5-1.3 5-3v-3l-5 2.5L7 12Z" fill="currentColor"/>` },
+  { id: 'springer', label: 'Springer',             handle: 'Saleh Jamali Golzar',
+    href: 'https://link.springer.com/search?dc.creator=Saleh%20Jamali%20Golzar', active: true,
+    icon: `<path d="M4 4h16v3H4V4Zm0 5h10v3H4V9Zm0 5h14v3H4v-3Zm0 5h8v2H4v-2Z" fill="currentColor"/>` },
+  { id: 'github', label: 'GitHub',                 handle: 'salehjg',
+    href: 'https://github.com/salehjg', active: true,
+    icon: `<path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.7 9.7 0 0 1 5.1 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.7.9.7 1.8v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor"/>` },
+  { id: 'gists', label: 'Gists',                   handle: 'gist.github.com/salehjg',
+    href: 'https://gist.github.com/salehjg', active: true,
+    icon: `<path d="M5 3h10l4 4v14H5V3Zm2 2v14h10V9h-4V5H7Zm2 6h6v2H9v-2Zm0 3h6v2H9v-2Zm0 3h4v2H9v-2Z" fill="currentColor"/>` },
+  { id: 'so', label: 'Stack Overflow',             handle: 'users/8296604/salehjg',
+    href: 'https://stackoverflow.com/users/8296604/salehjg', active: true,
+    icon: `<path d="M17 21H5v-7h2v5h10v-5h2v7h-2ZM7.5 13.5l.5-2 9 2.2-.5 2-9-2.2Zm1-4 1-1.7 8 4.7-1 1.7-8-4.7Zm2-3.5 1.5-1.3 6 7-1.5 1.3-6-7ZM14 2l1.8-1 4 8-1.8 1-4-8Z" fill="currentColor"/>` },
+  { id: 'se-unix', label: 'Unix & Linux SE',       handle: 'users/245581/salehjg',
+    href: 'https://unix.stackexchange.com/users/245581/salehjg', active: true,
+    icon: `<path d="M4 4h16v3H4V4Zm0 5h16v3H4V9Zm0 5h10v3H4v-3Zm0 5h6v2H4v-2Z" fill="currentColor"/>` },
+  { id: 'se-tex', label: 'TeX SE',                 handle: 'users/219659/salehjg',
+    href: 'https://tex.stackexchange.com/users/219659/salehjg', active: true,
+    icon: `<path d="M5 4h14v4h-2V6h-4v12h2v2H9v-2h2V6H7v2H5V4Z" fill="currentColor"/>` },
+  { id: 'gitlab', label: 'GitLab',                 handle: 'gitlab.com/salehjg',
+    href: 'https://gitlab.com/salehjg', active: false,
+    icon: `<path d="m12 21-4-12h8l-4 12Zm-5-12L4 15l8 6-5-12ZM17 9l3 6-8 6 5-12Z" fill="currentColor"/>` },
+  { id: 'twitter', label: 'Twitter',               handle: '@salehjg1994',
+    href: 'https://twitter.com/salehjg1994', active: false,
+    icon: `<path d="m4 4 7.5 10L4.5 20h2l6-6.5L17 20h3l-7.8-10.5L19.5 4h-2l-5.5 6L7 4H4Z" fill="currentColor"/>` },
+  { id: 'iranled', label: 'IranLED Forum',         handle: 'user-33654',
+    href: 'https://www.iranled.com/forum/user-33654.html', active: false,
+    icon: `<path d="M4 4h16v12H14l-4 4v-4H4V4Zm2 2v8h6v2l2-2h6V6H6Zm2 2h2v4H8V8Zm4 0h2v4h-2V8Zm4 0h2v4h-2V8Z" fill="currentColor"/>` },
+];
+
+function renderAccounts() {
+  const grid = document.getElementById('accounts');
+  const count = document.getElementById('acct-count');
+  const active = ACCOUNTS.filter(a => a.active).length;
+  count.textContent = `[ ${active} active · ${ACCOUNTS.length - active} inactive ]`;
+
+  grid.innerHTML = ACCOUNTS.map(a => `
+    <a class="account${a.active ? '' : ' inactive'}" href="${a.href}" target="_blank" rel="noopener">
+      <span class="glyph">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">${a.icon}</svg>
+      </span>
+      <span class="meta">
+        <span class="label">${a.label}</span>
+        <span class="handle">${a.handle}</span>
+      </span>
+      <span class="status-dot" title="${a.active ? 'active' : 'inactive'}"></span>
+    </a>
+  `).join('');
+}
+
+function initEmailCopy() {
+  const chip = document.getElementById('email-chip');
+  const hint = document.getElementById('email-hint');
+  const email = 'SalehJamaliGolzar@gmail.com';
+  chip.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      chip.classList.add('copied');
+      hint.textContent = '✓ copied';
+      setTimeout(() => { chip.classList.remove('copied'); hint.textContent = 'click to copy'; }, 1800);
+    } catch {
+      hint.textContent = email;
+    }
+  });
+}
+
+renderAccounts();
+initEmailCopy();
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

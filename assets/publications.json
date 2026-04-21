@@ -1,0 +1,35 @@
+[
+  {
+    "id": "golzar2026ligen",
+    "year": 2026,
+    "title": "Optimizing the LiGen drug discovery pipeline for Intel Max GPUs",
+    "authors": ["S. Jamali Golzar", "L. Carpentieri", "A. De Caro", "B. Cosenza", "D. Gadioli", "G. Accordi", "G. Palermo", "F. Ficarelli", "D. Gregori", "A. R. Beccari"],
+    "venue": "PDP 2026 · Euromicro Int. Conf. on Parallel, Distributed & Network-Based Processing",
+    "note": "accepted · first author",
+    "tags": ["hpc", "gpu", "intel-max", "sycl", "drug-discovery"],
+    "links": {},
+    "bibtex": "@inproceedings{golzar2026ligen,\n  title     = {Optimizing the {LiGen} drug discovery pipeline for {Intel Max} {GPUs}},\n  author    = {Jamali Golzar, Saleh and Carpentieri, L. and De Caro, A. and Cosenza, B. and Gadioli, D. and Accordi, G. and Palermo, G. and Ficarelli, F. and Gregori, D. and Beccari, A. R.},\n  booktitle = {34th Euromicro International Conference on Parallel, Distributed, and Network-Based Processing (PDP)},\n  year      = {2026}\n}"
+  },
+  {
+    "id": "jamali2025p2q",
+    "year": 2025,
+    "title": "Demystifying power-of-two quantization: benchmarking inference on AVX and RVV",
+    "authors": ["S. Jamali", "G. Pagano", "B. Cosenza"],
+    "venue": "ITADATA 2025 · Workshops · Scientific HPC in the pre-Exascale era (2nd ed.)",
+    "note": "accepted · first author",
+    "tags": ["hpc", "quantization", "inference", "avx", "riscv"],
+    "links": {},
+    "bibtex": "@inproceedings{jamali2025p2q,\n  title     = {Demystifying power-of-two quantization: benchmarking inference on {AVX} and {RVV}},\n  author    = {Jamali, Saleh and Pagano, G. and Cosenza, B.},\n  booktitle = {ITADATA Workshops — Scientific HPC in the pre-Exascale era},\n  year      = {2025}\n}"
+  },
+  {
+    "id": "jamali2023dgcnn",
+    "year": 2023,
+    "title": "DGCNN on FPGA: acceleration of the point cloud classifier using FPGAs",
+    "authors": ["S. Jamali", "M. Shoaran", "G. Karimian", "M. Fattahi"],
+    "venue": "Circuits, Systems, and Signal Processing (Springer)",
+    "note": "published · first author",
+    "tags": ["fpga", "deep-learning", "point-clouds", "hardware"],
+    "links": { "doi": "https://doi.org/10.1007/s00034-022-02179-0" },
+    "bibtex": "@article{jamali2023dgcnn,\n  title   = {{DGCNN} on {FPGA}: acceleration of the point cloud classifier using {FPGAs}},\n  author  = {Jamali, Saleh and Shoaran, M. and Karimian, G. and Fattahi, M.},\n  journal = {Circuits, Systems, and Signal Processing},\n  publisher = {Springer},\n  year    = {2023},\n  doi     = {10.1007/s00034-022-02179-0}\n}"
+  }
+]

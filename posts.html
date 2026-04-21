@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>saleh — posts</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Terminal list — bracket-date style, aligned */
+.term-list {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.95;
+  max-width: var(--content-max);
+}
+.term-list .year-head {
+  color: var(--fg-dimmer);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  margin: 22px 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--border-hi);
+}
+.term-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  padding: 2px 0;
+  align-items: baseline;
+}
+.term-row .bracket {
+  color: var(--fg-dimmer);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.term-row .bracket .date { color: var(--string); }
+.term-row .title {
+  color: var(--fg);
+  border: none;
+  border-bottom: 1px solid transparent;
+  transition: color .12s, border-color .12s;
+}
+.term-row .title:hover {
+  color: var(--prompt);
+  border-bottom-color: var(--prompt);
+}
+.term-row .title .kind { color: var(--keyword); margin-right: 2px; }
+.term-row .summary {
+  color: var(--fg-dim);
+  font-size: 12px;
+  margin-left: 2px;
+}
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px dashed var(--border-hi);
+  padding: 8px 12px;
+  margin: 12px 0 20px;
+  background: var(--bg-alt);
+  border-radius: 2px;
+  max-width: var(--content-max);
+}
+.search-row .caret { color: var(--prompt); font-weight: 700; }
+.search-row input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--fg);
+  font: inherit;
+}
+.search-row input::placeholder { color: var(--fg-dimmer); }
+.search-row .count { color: var(--fg-dimmer); font-size: 11px; }
+</style>
+</head>
+<body data-page="posts">
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-line"><span class="prompt">$</span> whoami</div>
+      <div class="brand-name">saleh</div>
+      <div class="brand-sub">cs/ml · phd candidate</div>
+    </div>
+    <div class="nav-section-label">pages</div>
+    <ul class="nav">
+      <li><a href="index.html"        data-nav="home"><span class="hash">01</span>home</a></li>
+      <li><a href="research.html"     data-nav="research"><span class="hash">02</span>research</a></li>
+      <li><a href="publications.html" data-nav="publications"><span class="hash">03</span>publications</a></li>
+      <li><a href="projects.html"     data-nav="projects"><span class="hash">04</span>projects</a></li>
+      <li><a href="posts.html"        data-nav="posts"><span class="hash">05</span>posts</a></li>
+      <li><a href="cv.html"           data-nav="cv"><span class="hash">06</span>cv</a></li>
+      <li><a href="contact.html"      data-nav="contact"><span class="hash">07</span>contact</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div>last updated · 2026.04.19</div>
+      <div><a href="#">github</a> · <a href="#">scholar</a> · <a href="#">bsky</a></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="cmd-line">
+      <span class="prompt">saleh@laptop</span>:<span class="arg">~/posts</span>$ ls <span class="flag">-t</span> <span class="arg">*.md</span>
+    </div>
+
+    <h1><span class="hash">#</span>posts</h1>
+    <p class="lede">research notes, short essays, and the occasional announcement.</p>
+
+    <div class="search-row">
+      <span class="caret">&gt;</span>
+      <input id="q" type="text" placeholder="filter by title, tag, year…" autocomplete="off">
+      <span class="count" id="count"></span>
+    </div>
+
+    <div class="term-list" id="list">
+      <p class="muted"># loading posts…</p>
+    </div>
+  </main>
+
+</div>
+
+<script>
+(async function () {
+  const list = document.getElementById('list');
+  const q    = document.getElementById('q');
+  const count = document.getElementById('count');
+  let posts = [];
+  try {
+    const res = await fetch('posts/index.json', { cache: 'no-cache' });
+    posts = await res.json();
+  } catch (e) {
+    list.innerHTML = `<p class="muted"># failed to load posts/index.json — ${e.message}</p>`;
+    return;
+  }
+
+  posts.sort((a, b) => b.date.localeCompare(a.date));
+
+  function titleHtml(p) {
+    // pick out leading [Tag] so it can be colored
+    const m = p.title.match(/^(\[[^\]]+\])\s*(.*)$/);
+    if (m) return `<span class="kind">${m[1]}</span> ${m[2]}`;
+    return p.title;
+  }
+
+  function render(filter) {
+    const f = (filter || '').trim().toLowerCase();
+    const shown = posts.filter(p => {
+      if (!f) return true;
+      const hay = [p.title, p.date, (p.tags||[]).join(' '), p.summary||''].join(' ').toLowerCase();
+      return f.split(/\s+/).every(tok => hay.includes(tok));
+    });
+
+    count.textContent = shown.length === posts.length
+      ? `${posts.length} posts`
+      : `${shown.length}/${posts.length}`;
+
+    if (!shown.length) {
+      list.innerHTML = `<p class="muted"># no matches.</p>`;
+      return;
+    }
+
+    const byYear = {};
+    shown.forEach(p => {
+      const y = p.date.slice(0,4);
+      (byYear[y] ||= []).push(p);
+    });
+    const years = Object.keys(byYear).sort().reverse();
+
+    list.innerHTML = years.map(y => `
+      <div class="year-head">── ${y} ──</div>
+      ${byYear[y].map(p => `
+        <div class="term-row">
+          <span class="bracket">[ <span class="date">${p.date}</span> ]</span>
+          <span>
+            <a class="title" href="post.html?slug=${encodeURIComponent(p.slug)}">${titleHtml(p)}</a>
+            ${p.summary ? `<div class="summary">${p.summary}</div>` : ''}
+          </span>
+        </div>
+      `).join('')}
+    `).join('');
+  }
+
+  q.addEventListener('input', () => render(q.value));
+  render('');
+})();
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>saleh — home</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="home">
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-line"><span class="prompt">$</span> whoami</div>
+      <div class="brand-name">saleh</div>
+      <div class="brand-sub">CS/EE · phd student</div>
+    </div>
+
+    <div class="nav-section-label">pages</div>
+    <ul class="nav">
+      <li><a href="index.html"        data-nav="home"><span class="hash">01</span>home</a></li>
+      <li><a href="research.html"     data-nav="research"><span class="hash">02</span>research</a></li>
+      <li><a href="publications.html" data-nav="publications"><span class="hash">03</span>publications</a></li>
+      <li><a href="projects.html"     data-nav="projects"><span class="hash">04</span>projects</a></li>
+      <li><a href="posts.html"        data-nav="posts"><span class="hash">05</span>posts</a></li>
+      <li><a href="cv.html"           data-nav="cv"><span class="hash">06</span>cv</a></li>
+      <li><a href="contact.html"      data-nav="contact"><span class="hash">07</span>contact</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div>last updated · 2026.04.21</div>
+      <div>
+        <a href="https://github.com/salehjg">github</a> · <a href="https://scholar.google.com/citations?user=cYpKeoIAAAAJ&hl=en&authuser=1">scholar</a> · <a href="https://orcid.org/0009-0003-1905-1537">orcid</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="cmd-line">
+      <span class="prompt">saleh@laptop</span>:<span class="arg">~</span>$ cat <span class="flag">about.md</span>
+    </div>
+
+    <h1><span class="hash">$</span>saleh<span class="cursor"></span></h1>
+    <p class="lede">phd student · HPC · inference acceleration · FPGAs · embedded</p>
+
+    <div class="prose">
+      <p>I'm a PhD student in Computer Science at the <em>University of Salerno</em>, advised by Prof. Biagio Cosenza. My work is on high-performance computing — optimizing ML and scientific workloads on Intel hardware and software stacks, and more broadly across GPUs, SIMD, and FPGAs.</p>
+
+      <p>Before the PhD I did an MSc in Electrical Engineering (IC design) at the University of Tabriz, where I worked on 3D deep learning on heterogeneous systems — GPU/FPGA acceleration of DGCNN on point clouds. I also spent a few years building embedded and IoT systems in industry.</p>
+
+      <p class="muted"># currently: visiting researcher at TU Wien (Parallel Computing Lab, Prof. Sascha Hunold).</p>
+
+      <h2>selected work</h2>
+      <div class="list" id="home-pubs">
+        <p class="muted"># loading…</p>
+      </div>
+
+      <h2>recent posts</h2>
+      <div class="list" id="home-posts">
+        <p class="muted"># loading…</p>
+      </div>
+
+      <hr class="rule">
+
+      <p class="muted">Feel free to <a href="contact.html">reach out</a>.</p>
+    </div>
+  </main>
+
+</div>
+
+<script>
+(async function () {
+  const pubsEl  = document.getElementById('home-pubs');
+  const postsEl = document.getElementById('home-posts');
+
+  function ymFromDate(d) { return d.slice(0, 7).replace('-', '.'); }
+
+  // publications (top 3)
+  try {
+    const res = await fetch('assets/publications.json', { cache: 'no-cache' });
+    const pubs = await res.json();
+    pubs.sort((a,b) => b.year - a.year);
+    pubsEl.innerHTML = pubs.slice(0, 3).map(p => `
+      <div class="item">
+        <div class="item-date">${p.year}</div>
+        <div>
+          <div class="item-title"><a href="publications.html">${p.title}</a></div>
+          <div class="item-meta">${p.venue}${p.note ? ' · ' + p.note : ''}</div>
+        </div>
+      </div>
+    `).join('');
+  } catch (e) {
+    pubsEl.innerHTML = `<p class="muted"># failed to load publications</p>`;
+  }
+
+  // posts (top 3)
+  try {
+    const res = await fetch('posts/index.json', { cache: 'no-cache' });
+    const posts = await res.json();
+    posts.sort((a,b) => b.date.localeCompare(a.date));
+    postsEl.innerHTML = posts.slice(0, 3).map(p => `
+      <div class="item">
+        <div class="item-date">${ymFromDate(p.date)}</div>
+        <div>
+          <div class="item-title"><a href="post.html?slug=${encodeURIComponent(p.slug)}">${p.title}</a></div>
+          ${p.summary ? `<div class="item-meta">${p.summary}</div>` : ''}
+        </div>
+      </div>
+    `).join('');
+  } catch (e) {
+    postsEl.innerHTML = `<p class="muted"># failed to load posts</p>`;
+  }
+})();
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

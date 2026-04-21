@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>saleh — projects</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.project-tags {
+  display: inline-flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;
+}
+.project-tags .tag {
+  font-size: 11px; color: var(--keyword);
+  border: 1px solid var(--border-hi); padding: 0 5px; border-radius: 2px;
+  font-family: var(--mono);
+}
+.section-head {
+  color: var(--fg-dimmer);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  margin: 28px 0 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--border-hi);
+}
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+  max-width: var(--content-max);
+  margin-top: 8px;
+}
+.repo-card {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 10px 12px;
+  background: var(--bg-alt);
+}
+.repo-card a {
+  border: none;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--fg);
+}
+.repo-card a:hover { color: var(--prompt); }
+.repo-card .repo-slug { color: var(--fg-dimmer); font-size: 11px; }
+</style>
+</head>
+<body data-page="projects">
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-line"><span class="prompt">$</span> whoami</div>
+      <div class="brand-name">saleh</div>
+      <div class="brand-sub">CS/EE · phd candidate</div>
+    </div>
+    <div class="nav-section-label">pages</div>
+    <ul class="nav">
+      <li><a href="index.html"        data-nav="home"><span class="hash">01</span>home</a></li>
+      <li><a href="research.html"     data-nav="research"><span class="hash">02</span>research</a></li>
+      <li><a href="publications.html" data-nav="publications"><span class="hash">03</span>publications</a></li>
+      <li><a href="projects.html"     data-nav="projects"><span class="hash">04</span>projects</a></li>
+      <li><a href="posts.html"        data-nav="posts"><span class="hash">05</span>posts</a></li>
+      <li><a href="cv.html"           data-nav="cv"><span class="hash">06</span>cv</a></li>
+      <li><a href="contact.html"      data-nav="contact"><span class="hash">07</span>contact</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div>last updated · 2026.04.21</div>
+      <div><a href="https://github.com/salehjg">github</a> · <a href="https://scholar.google.com/citations?user=cYpKeoIAAAAJ&hl=en&authuser=1">scholar</a> · <a href="https://orcid.org/0009-0003-1905-1537">orcid</a></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="cmd-line">
+      <span class="prompt">saleh@laptop</span>:<span class="arg">~/projects</span>$ ls <span class="flag">-la</span>
+    </div>
+
+    <h1><span class="hash">#</span>projects</h1>
+    <p class="lede">hobby and commercial projects — hardware, embedded, imaging, and ML tooling.</p>
+
+    <div class="prose">
+
+      <div class="project">
+        <div class="project-header">
+          <a href="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/fpga.gif" class="project-name">FPGA-based USB2.0 digital camera</a>
+        </div>
+        <div class="project-desc">Custom USB2.0 digital camera built around a Xilinx Spartan-3 FPGA and Cypress USB-FX2LP, with an Omnivision OV7670 CMOS sensor. Full PCB + Verilog design entry.</div>
+        <div class="project-tags">
+          <span class="tag">fpga</span>
+          <span class="tag">verilog</span>
+          <span class="tag">usb2.0</span>
+          <span class="tag">pcb</span>
+          <span class="tag">image-sensor</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <a href="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/leaf.gif" class="project-name">DigiLeaf</a>
+        </div>
+        <div class="project-desc">A leaf-shape analysis application in C# .NET, with batch image-analysis support.</div>
+        <div class="project-tags">
+          <span class="tag">c#.net</span>
+          <span class="tag">image-processing</span>
+          <span class="tag">desktop-app</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <a href="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/scan.gif" class="project-name">3D scanner hardware · photogrammetry</a>
+        </div>
+        <div class="project-desc">Hardware for a photogrammetry-based 3D scanner — motorized platform that rotates the object in front of a fixed camera.</div>
+        <div class="project-tags">
+          <span class="tag">hardware</span>
+          <span class="tag">photogrammetry</span>
+          <span class="tag">mechatronics</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <a href="https://raw.githubusercontent.com/salehjg/salehjg.github.io/master/images/logger.gif" class="project-name">ESP32 wireless 4-ch data logger</a>
+        </div>
+        <div class="project-desc">Mixed-signal PCB design, ESP-IDF firmware, and a C#.NET desktop client for visualization and export.</div>
+        <div class="project-tags">
+          <span class="tag">esp32</span>
+          <span class="tag">esp-idf</span>
+          <span class="tag">mixed-signal</span>
+          <span class="tag">pcb</span>
+          <span class="tag">c#.net</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-name">IoT/Wireless treadmill controller</span>
+        </div>
+        <div class="project-desc">ESP8266 + STM8 based controller with an IGBT power stage and an Android control application.</div>
+        <div class="project-tags">
+          <span class="tag">esp8266</span>
+          <span class="tag">stm8</span>
+          <span class="tag">igbt</span>
+          <span class="tag">android</span>
+          <span class="tag">iot</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-name">Digimposer</span>
+        </div>
+        <div class="project-desc">Extended depth-of-field for microscopy imaging, with camera support for Basler products.</div>
+        <div class="project-tags">
+          <span class="tag">microscopy</span>
+          <span class="tag">image-processing</span>
+          <span class="tag">basler</span>
+        </div>
+      </div>
+
+      <div class="section-head">── repositories ──</div>
+      <div class="repo-grid">
+        <div class="repo-card"><a href="https://github.com/salehjg/DeepPoint-V2-FPGA">DeepPoint-V2-FPGA</a><div class="repo-slug">point-cloud DL on FPGA</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/PocketZotero">PocketZotero</a><div class="repo-slug">Zotero companion</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/Shapenet2_Preparation">Shapenet2_Preparation</a><div class="repo-slug">dataset prep</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/MeshToPointcloudFPS">MeshToPointcloudFPS</a><div class="repo-slug">mesh → point-cloud (FPS)</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/batch-matmul-cuda">batch-matmul-cuda</a><div class="repo-slug">CUDA batched matmul</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/SimplePasteBin">SimplePasteBin</a><div class="repo-slug">minimal paste service</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/gpu_webcam">gpu_webcam</a><div class="repo-slug">GPU webcam experiment</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/DGCNN-on-FPGA">DGCNN-on-FPGA</a><div class="repo-slug">DGCNN accelerator</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/pointcloud_to_tikz_converter">pointcloud_to_tikz_converter</a><div class="repo-slug">point-cloud → TikZ</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/DGCNN-GPGPU">DGCNN-GPGPU</a><div class="repo-slug">DGCNN on GPGPU</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/latex_3d_objects_with_sketch">latex_3d_objects_with_sketch</a><div class="repo-slug">3D objects in LaTeX</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/Batch-TopK">Batch-TopK</a><div class="repo-slug">batched top-k kernel</div></div>
+        <div class="repo-card"><a href="https://github.com/salehjg/Cereal-Cpp-Examples">Cereal-Cpp-Examples</a><div class="repo-slug">C++ serialization examples</div></div>
+      </div>
+
+      <p class="muted" style="margin-top:14px">→ full list on <a href="https://github.com/salehjg">github.com/salehjg</a>.</p>
+    </div>
+  </main>
+
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

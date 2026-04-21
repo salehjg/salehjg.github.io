@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>saleh — research</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="research">
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-line"><span class="prompt">$</span> whoami</div>
+      <div class="brand-name">saleh</div>
+      <div class="brand-sub">CS/EE · phd candidate</div>
+    </div>
+    <div class="nav-section-label">pages</div>
+    <ul class="nav">
+      <li><a href="index.html"        data-nav="home"><span class="hash">01</span>home</a></li>
+      <li><a href="research.html"     data-nav="research"><span class="hash">02</span>research</a></li>
+      <li><a href="publications.html" data-nav="publications"><span class="hash">03</span>publications</a></li>
+      <li><a href="projects.html"     data-nav="projects"><span class="hash">04</span>projects</a></li>
+      <li><a href="posts.html"        data-nav="posts"><span class="hash">05</span>posts</a></li>
+      <li><a href="cv.html"           data-nav="cv"><span class="hash">06</span>cv</a></li>
+      <li><a href="contact.html"      data-nav="contact"><span class="hash">07</span>contact</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div>last updated · 2026.04.21</div>
+      <div><a href="https://github.com/salehjg">github</a> · <a href="https://scholar.google.com/citations?user=cYpKeoIAAAAJ&hl=en&authuser=1">scholar</a> · <a href="https://orcid.org/0009-0003-1905-1537">orcid</a></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="cmd-line">
+      <span class="prompt">saleh@laptop</span>:<span class="arg">~/research</span>$ ls <span class="flag">--long</span>
+    </div>
+
+    <h1><span class="hash">#</span>research</h1>
+    <p class="lede">high-performance computing for ML and scientific workloads — across GPUs, SIMD, FPGAs, and RISC-V.</p>
+
+    <div class="prose">
+      <h2>hpc for drug discovery on intel max gpus</h2>
+      <p>Optimizing the <em>LiGen</em> virtual-screening pipeline for Intel Max (Ponte Vecchio) GPUs. The goal is to close the portability gap — SYCL code that runs well on Intel without giving up the performance we'd get from vendor-native paths.</p>
+      <p class="muted">with B. Cosenza, L. Carpentieri, A. De Caro · PDP 2026 · collaborators at Politecnico di Milano &amp; Dompé.</p>
+
+      <h2>quantized inference on AVX &amp; RVV</h2>
+      <p>A careful, architecture-level look at <em>power-of-two quantization</em> for neural-network inference on wide-SIMD CPUs. We benchmark across AVX (x86) and RVV (RISC-V) to understand which gains come from the quantization scheme itself, and which from the instruction set.</p>
+      <p class="muted">with G. Pagano, B. Cosenza · ITADATA 2025 Workshops.</p>
+
+      <h2>fpga acceleration of 3d deep learning</h2>
+      <p>Accelerating point-cloud classifiers (DGCNN) on FPGAs using HLS and Verilog. The underlying question: how far can we push irregular, graph-structured DL models onto reconfigurable fabric without giving up accuracy?</p>
+      <p class="muted">MSc thesis · published in Circuits, Systems, and Signal Processing (Springer, 2023).</p>
+
+      <hr class="rule">
+      <p class="muted"># if you're a prospective collaborator, the fastest way in is <a href="contact.html">email</a> with a concrete question.</p>
+    </div>
+  </main>
+
+</div>
+<script src="assets/site.js"></script>
+</body>
+</html>

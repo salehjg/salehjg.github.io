@@ -1,0 +1,289 @@
+[
+  {
+    "slug": "2026-04-04-pdp26",
+    "title": "[Slides] Presented _LiGen on Intel Max_ at PDP '26",
+    "date": "2026-04-04",
+    "tags": [
+      "intelmax",
+      "hpc",
+      "paper"
+    ],
+    "summary": "Download the slides for our LiGen on Intel Max paper at PDP '26 (Cluj, Romania) here"
+  },
+  {
+    "slug": "2026-03-30-new-pub",
+    "title": "[New Publication] Optimizing the LiGen Drug Discovery Pipeline for Intel Max GPUs",
+    "date": "2026-03-30",
+    "tags": [
+      "intelmax",
+      "hpc",
+      "paper",
+      "linux"
+    ],
+    "summary": "> Optimizing the LiGen Drug Discovery Pipeline for Intel Max GPUs"
+  },
+  {
+    "slug": "2026-03-19-new-year",
+    "title": "Happy New Year",
+    "date": "2026-03-19",
+    "tags": [
+      "newyear"
+    ],
+    "summary": "Spring is here again."
+  },
+  {
+    "slug": "2026-01-12-new-pub",
+    "title": "[New Publication] Demystifying Power-of-Two Quantization: Benchmarking Inference on AVX and RVV",
+    "date": "2026-01-12",
+    "tags": [
+      "oneapi",
+      "hpc",
+      "ml",
+      "paper"
+    ],
+    "summary": "> Demystifying Power-of-Two Quantization: Benchmarking Inference on AVX and RVV"
+  },
+  {
+    "slug": "2025-10-04-icpx-cache-config-crashes",
+    "title": "oneAPI icpx crashes when using the cache config extension",
+    "date": "2025-10-04",
+    "tags": [
+      "oneapi",
+      "hpc",
+      "tools"
+    ],
+    "summary": "When experimenting with the Intel SYCL cache configuration extension, I noticed that icpx crashes during compilation or produces an executable that crashes…"
+  },
+  {
+    "slug": "2025-02-26-confs",
+    "title": "2025-02-26-confs",
+    "date": "2025-02-26",
+    "tags": [
+      "hpc"
+    ]
+  },
+  {
+    "slug": "2025-01-22-gcc-from-src",
+    "title": "Building GCC From Source",
+    "date": "2025-01-22",
+    "tags": [
+      "gcc"
+    ],
+    "summary": "I needed a baseline bash script to build GCC from source."
+  },
+  {
+    "slug": "2025-01-22-qemu-for-riscv64",
+    "title": "Setting up QEMU for RISCV64 on Archlinux",
+    "date": "2025-01-22",
+    "tags": [
+      "qemu",
+      "linux"
+    ],
+    "summary": "sudo pacman -S qemu-user-binfmt"
+  },
+  {
+    "slug": "2024-10-05-toolsprofilers",
+    "title": "Useful Tools and Profilers for C/C++",
+    "date": "2024-10-05",
+    "tags": [
+      "profiling",
+      "tools"
+    ],
+    "summary": "I often forget the names of the tools and programs that I have found useful when I need them. In this post, I am going to document them with a short…"
+  },
+  {
+    "slug": "2024-08-14-tandemjump",
+    "title": "My First Ever Tandem Jump",
+    "date": "2024-08-14",
+    "tags": [
+      "fun",
+      "tools"
+    ],
+    "summary": "This post is not about computers and electronics. It is about my lifelong dream of flying!"
+  },
+  {
+    "slug": "2024-06-30-caches",
+    "title": "Everything About Caches",
+    "date": "2024-06-30",
+    "tags": [
+      "computerarch",
+      "tools"
+    ],
+    "summary": "A cache is a specialized memory that sits between a processor and its actual memory."
+  },
+  {
+    "slug": "2024-02-26-thegeniusofthecrowd",
+    "title": "Charles Bukowski's The Genius Of The Crowd",
+    "date": "2024-02-26",
+    "tags": [
+      "poem"
+    ],
+    "summary": "This was too good not to share with you."
+  },
+  {
+    "slug": "2024-02-14-nvidiaprime",
+    "title": "Nvidia Prime",
+    "date": "2024-02-14",
+    "tags": [
+      "linux",
+      "tools"
+    ],
+    "summary": "sudo pacman -S mesa mesa-utils nvidia-lts nvidia-prime nvidia-settings nvidia-utils"
+  },
+  {
+    "slug": "2023-12-29-postmarketos",
+    "title": "PostMarketOS on Xiaomi Note 4X",
+    "date": "2023-12-29",
+    "tags": [
+      "linux"
+    ],
+    "summary": "PostMarketOS, an Alpine Linux based distro for smartphones, offers an amazing opportunity for the old Android phones with unlocked bootloaders to be used as…"
+  },
+  {
+    "slug": "2023-08-13-arch-automount-smb",
+    "title": "Automount for Raspberry PI SMB Server",
+    "date": "2023-08-13",
+    "tags": [
+      "linux"
+    ],
+    "summary": "I use Archlinux and have a RPi3 that runs a Samba server as my homebew NAS."
+  },
+  {
+    "slug": "2023-08-06-tfrecords",
+    "title": "Understanding TFRecords in Tensorflow 2.x",
+    "date": "2023-08-06",
+    "tags": [
+      "ml"
+    ],
+    "summary": "I used to feed my Tensorflow (tf) models with Numpy (np) ndarrays. Although quite convenient, this approach could not be used for large datasets without…"
+  },
+  {
+    "slug": "2023-07-02-mutable-abstract-syntax-trees",
+    "title": "Mutable Abstract Syntax Trees",
+    "date": "2023-07-02",
+    "tags": [
+      "latex"
+    ],
+    "summary": "Abstract Syntax Trees or ASTs in short, are containers that represent a piece of code in a file or in some cases, the entirety of multiple files."
+  },
+  {
+    "slug": "2023-06-04-doxygen-and-githubpages",
+    "title": "Automated Doxygen deployment on GitHub Pages with diagrams",
+    "date": "2023-06-04",
+    "tags": [
+      "tools"
+    ],
+    "summary": "It took me almost 5 hours to figure out how to use Github Actions to automatically build and deploy Doxygen documentation on GitHub Pages when commits are…"
+  },
+  {
+    "slug": "2023-05-03-pypimirrors",
+    "title": "PyPI Mirrors",
+    "date": "2023-05-03",
+    "tags": [
+      "tools"
+    ],
+    "summary": "If your pip is slow dowloading the packages you might want to use a PyPI mirror. The unfortunate issues is that unlike other package managers there is no…"
+  },
+  {
+    "slug": "2023-04-10-cereal-example",
+    "title": "Using Cereal library for serializing objects in C++",
+    "date": "2023-04-10",
+    "tags": [
+      "note"
+    ],
+    "summary": "Hi there, I just wanted to share my simple CMake example of how to use Cereal to serialize classes considering inheritances and polymorphism."
+  },
+  {
+    "slug": "2023-03-06-opencv-ndk1",
+    "title": "How to build OpenCV from source for Android",
+    "date": "2023-03-06",
+    "tags": [
+      "linux"
+    ],
+    "summary": "Recently, I had to use OpenCV in an Android Studio project and unfortunately, the off-the-shelf, ready-to-use binaries on the internet were not entirely…"
+  },
+  {
+    "slug": "2022-11-09-deepfuser1",
+    "title": "Computational Graphs for NNs.",
+    "date": "2022-11-09",
+    "tags": [
+      "note"
+    ],
+    "summary": "This post is not ready yet!"
+  },
+  {
+    "slug": "2022-10-31-dgcnnonfpga",
+    "title": "Our paper is now available online! (DGCNN on FPGAs)",
+    "date": "2022-10-31",
+    "tags": [
+      "fpga",
+      "ml",
+      "paper"
+    ],
+    "summary": "Our paper titled \"DGCNN on FPGA: Acceleration of The Point Cloud Classifier Using FPGAs\" has finally been published online and is available here."
+  },
+  {
+    "slug": "2022-08-31-springer-bst",
+    "title": "An unofficial BibTeX Style File For Springer CSSP",
+    "date": "2022-08-31",
+    "tags": [
+      "latex"
+    ],
+    "summary": "Here, you can find my modified BST file ( spbasic.bst ) for Springer CSSP Journal."
+  },
+  {
+    "slug": "2022-03-10-symbolic-comp",
+    "title": "Mature Libraries for Symbolic Computation",
+    "date": "2022-03-10",
+    "tags": [
+      "note"
+    ],
+    "summary": "Lately, shortcomming of SymPy for Python has forced me to look for its alternatives elsewhere."
+  },
+  {
+    "slug": "2021-12-21-pocketzotero",
+    "title": "PocketZotero",
+    "date": "2021-12-21",
+    "tags": [
+      "tools"
+    ],
+    "summary": "The idea behind PocketZotero is to provide Android users with a simple application to access their zotero databases on their local storage (smartphone's…"
+  },
+  {
+    "slug": "2021-12-07-papersummary-loadslicecore",
+    "title": "Paper Summary - Load Slice Core Microarchitecture",
+    "date": "2021-12-07",
+    "tags": [
+      "paper",
+      "linux"
+    ],
+    "summary": "Here, I am going to share my notes and summaries on the paper \"The Load Slice Core Microarchitecture\"."
+  },
+  {
+    "slug": "2021-09-10-meshtopointcloud",
+    "title": "A Tool To Convert Mesh Data To Pointcloud",
+    "date": "2021-09-10",
+    "tags": [
+      "ml"
+    ],
+    "summary": "MeshToPointcloudFPS is an opensource utility based on PCL-lib, Vcglib, and Meshlab to convert OBJ files into PCL or HDF5 files. It supports downsampling of…"
+  },
+  {
+    "slug": "2021-09-10-shapenet-preparation",
+    "title": "Preparation of Shapenet Core V2 (Mesh to PCL)",
+    "date": "2021-09-10",
+    "tags": [
+      "ml"
+    ],
+    "summary": "This post is going to be a short one! Just wanted to share my python script to prepare and convert Shapenet Core V2 to pointclouds."
+  },
+  {
+    "slug": "2021-06-26-my-home-town",
+    "title": "My hometown Tabriz",
+    "date": "2021-06-26",
+    "tags": [
+      "note"
+    ],
+    "summary": "Located in northwestern Iran, Tabriz with a population of around 2 million is one of the biggest cities of the country. (the photos are from Wikipedia)"
+  }
+]
