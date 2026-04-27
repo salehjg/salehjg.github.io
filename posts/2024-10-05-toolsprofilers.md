@@ -23,3 +23,9 @@ Various sanitizers available as a part of the standard famous compilers out ther
 ## DMTCP
 Save the status of a program onto a file and resume running it later from the checkpoint file. [Website](https://github.com/dmtcp/dmtcp)
 
+## PAPI
+Could be used in C++ programs to profile only a segment of the code. [PAPI](https://github.com/icl-utk-edu/papi)
+
+## LIKWID
+Pronounced similarly to liquid and similar to PAPI, it provides more CLI tools and ways to profile CPU tasks and code. [LIKWID](https://github.com/rrze-hpc/likwid)
+
