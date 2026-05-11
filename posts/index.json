@@ -1,5 +1,12 @@
 [
   {
+    "slug": "2026-05-10-sparsitypapers",
+    "title": "Sparsity in the last seven years (AAAI, ICLR, NIPS, ICML, ACML, and CVPR)",
+    "date": "2026-05-10",
+    "tags": ["hpc","ai","conference","ml"],
+    "summary": "Sparsity papers published over the last seven years at major AI/ML conferences."
+  },
+  {
     "slug": "2026-04-04-pdp26",
     "title": "[Slides] Presented _LiGen on Intel Max_ at PDP '26",
     "date": "2026-04-04",
