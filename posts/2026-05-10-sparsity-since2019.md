@@ -1,6 +1,6 @@
 ---
 title: AI/ML Conferences in Europe
-date: 2025-02-26
+date: 2026-05-10
 tags: [hpc,ai,conference,ml]
 ---
 
