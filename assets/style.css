@@ -445,6 +445,42 @@ hr.rule {
 .cv-what-title { color: var(--fg); }
 .cv-what-org { color: var(--fg-dim); font-size: 12px; }
 
+/* skills — labeled sub-groups with chips */
+.skills { margin-top: 4px; }
+.skill-group {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px dotted var(--border);
+}
+.skill-group:last-child { border-bottom: none; }
+.skill-cat { color: var(--accent); font-size: 12px; }
+.skill-body { display: flex; flex-direction: column; gap: 10px; }
+.skill-sub {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  align-items: baseline;
+}
+.skill-sub-label {
+  color: var(--fg-dimmer);
+  font-size: 11px;
+  text-align: right;
+  font-family: var(--mono);
+}
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  color: var(--keyword);
+  font-size: 11px;
+  padding: 1px 7px;
+  border: 1px solid var(--border-hi);
+  border-radius: 2px;
+  font-family: var(--mono);
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
 /* ============================================================
    Contact
    ============================================================ */
@@ -489,4 +525,7 @@ hr.rule {
   .main { padding: 28px 20px; }
   .item { grid-template-columns: 70px 1fr; }
   .cv-row { grid-template-columns: 100px 1fr; }
+  .skill-group { grid-template-columns: 100px 1fr; }
+  .skill-sub { grid-template-columns: 1fr; gap: 5px; }
+  .skill-sub-label { text-align: left; }
 }
